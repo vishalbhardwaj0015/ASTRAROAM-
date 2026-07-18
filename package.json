@@ -1,8 +1,20 @@
 {
   "name": "astraroam",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "homepage": "https://github.com/vishalbhardwaj0015/ASTRAROAM-#readme",
+  "bugs": {
+    "url": "https://github.com/vishalbhardwaj0015/ASTRAROAM-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalbhardwaj0015/ASTRAROAM-.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "postcss.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

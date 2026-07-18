@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FaPhone, FaEnvelope, FaGlobe, FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from 'react-icons/fa'
 import { FiMapPin, FiSend, FiClock, FiMessageCircle } from 'react-icons/fi'
+import { API_URL } from '../config/api'
 
 const contactCards = [
   { icon: <FaPhone />, title: 'Call Us', detail: '+91 70185 99060 / +91 98055 56015', sub: 'Mon – Sat, 9AM – 7PM', action: 'tel:+917018599060', color: 'from-primary to-primary-light' },
@@ -42,10 +43,19 @@ export default function Contact() {
     }, 1500)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (validate()) {
       sendWhatsApp(form)
+      try {
+        await fetch(`${API_URL}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        })
+      } catch (err) {
+        console.error('API error:', err)
+      }
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 5000)
       setForm({ name: '', email: '', phone: '', subject: '', message: '' })

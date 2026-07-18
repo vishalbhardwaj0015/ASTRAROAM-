@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { destinations, treks } from '../data/siteData'
+import { API_URL } from '../config/api'
 import { FaMountain, FaPhone, FaEnvelope, FaClock, FaWhatsapp, FaStar, FaShieldAlt, FaHeadset, FaMapMarkedAlt } from 'react-icons/fa'
 import { FiSend, FiUsers, FiCalendar, FiMapPin, FiCheck } from 'react-icons/fi'
 
@@ -75,10 +76,19 @@ export default function BookingForm() {
     }, 2000)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (validate()) {
       sendWhatsApp(form)
+      try {
+        await fetch(`${API_URL}/api/booking`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        })
+      } catch (err) {
+        console.error('API error:', err)
+      }
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 6000)
       setForm({ name: '', phone: '', email: '', dreamDestination: '', travelType: '', people: '', date: '', budget: '', message: '' })
