@@ -50,21 +50,21 @@ export default function Home() {
       <Hero />
 
       {/* Features */}
-      <section className="py-24">
+      <section className="py-24 dark:bg-gray-900">
         <div className="max-w-[1280px] mx-auto px-5">
-          <div className="text-center mb-14" data-aos="fade-up">
+          <div className="text-center mb-8" data-aos="fade-up">
             <span className="section-tag">Why ASTRAROAM</span>
-            <h2 className="text-[clamp(2rem,4vw,3rem)] mb-4">Your Adventure, Our Passion</h2>
-            <p className="text-gray text-lg max-w-xl mx-auto">We don't just plan trips. We craft life-changing Himalayan experiences.</p>
+            <h2 className="text-[clamp(2rem,4vw,3rem)] mb-3">Your Adventure, Our Passion</h2>
+            <p className="text-gray text-lg max-w-xl mx-auto dark:text-gray-400">We don't just plan trips. We craft life-changing Himalayan experiences.</p>
           </div>
           <div className="features-grid-home grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {features.map((f, i) => (
-              <div key={i} className="feature-card-home text-center p-10 bg-white rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glass-lg hover:border-transparent" data-aos="fade-up" data-aos-delay={i * 100}>
+              <div key={i} className="feature-card-home text-center p-10 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glass-lg hover:border-transparent" data-aos="fade-up" data-aos-delay={i * 100}>
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-2xl text-primary mx-auto mb-5 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-accent group-hover:text-white group-hover:scale-105">
                   {f.icon}
                 </div>
                 <h3 className="text-lg mb-2.5">{f.title}</h3>
-                <p className="text-gray text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-gray text-sm leading-relaxed dark:text-gray-400">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -72,12 +72,14 @@ export default function Home() {
       </section>
 
       {/* Destinations */}
-      <section className="py-24 bg-off-white">
-        <div className="max-w-[1280px] mx-auto px-5">
+      <section className="relative py-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" alt="Shimla snow mountains" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-white/92 dark:bg-gray-900/92" />
+        <div className="relative max-w-[1280px] mx-auto px-5">
           <div className="text-center mb-14" data-aos="fade-up">
             <span className="section-tag">Destinations</span>
-            <h2 className="text-[clamp(2rem,4vw,3rem)] mb-4">Explore Hidden Gems</h2>
-            <p className="text-gray text-lg max-w-xl mx-auto">Discover the most stunning destinations across the Himalayan belt</p>
+            <h2 className="text-[clamp(2rem,4vw,3rem)] mb-4">Our Destinations</h2>
+            <p className="text-gray text-lg max-w-xl mx-auto dark:text-gray-400">Discover the most stunning destinations across the Himalayan belt</p>
           </div>
           <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {destinations.slice(0, 4).map((d) => (
@@ -110,12 +112,12 @@ export default function Home() {
       </section>
 
       {/* Packages */}
-      <section className="py-24 bg-off-white">
+      <section className="py-24 bg-off-white dark:bg-gray-950">
         <div className="max-w-[1280px] mx-auto px-5">
           <div className="text-center mb-14" data-aos="fade-up">
             <span className="section-tag">Packages</span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] mb-4">Curated Travel Packages</h2>
-            <p className="text-gray text-lg max-w-xl mx-auto">All-inclusive packages designed for the perfect Himalayan getaway</p>
+            <p className="text-gray text-lg max-w-xl mx-auto dark:text-gray-400">All-inclusive packages designed for the perfect Himalayan getaway</p>
           </div>
           <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {packages.map((p) => (
@@ -128,8 +130,8 @@ export default function Home() {
       {/* Video Banner */}
       <section className="relative h-[400px] max-md:h-[300px]">
         <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&h=800&fit=crop"
-          alt="Mountain adventure"
+          src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&h=800&fit=crop"
+          alt="Trekking adventure in the mountains"
           loading="lazy"
           className="w-full h-full object-cover"
         />
@@ -144,21 +146,21 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24">
+      <section className="py-24 dark:bg-gray-900">
         <div className="max-w-[1280px] mx-auto px-5">
           <div className="text-center mb-14" data-aos="fade-up">
             <span className="section-tag">The ASTRAROAM Difference</span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] mb-4">Why Choose Us</h2>
-            <p className="text-gray text-lg max-w-xl mx-auto">We go beyond just organizing trips — we build trust</p>
+            <p className="text-gray text-lg max-w-xl mx-auto dark:text-gray-400">We go beyond just organizing trips — we build trust</p>
           </div>
           <div className="grid grid-cols-5 gap-6 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1">
             {whyChooseUs.map((item, i) => (
-              <div key={i} className="text-center p-8 bg-white rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-md" data-aos="fade-up" data-aos-delay={i * 80}>
+              <div key={i} className="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md" data-aos="fade-up" data-aos-delay={i * 80}>
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-primary-light text-white flex items-center justify-center text-lg mx-auto mb-4">
                   {item.icon}
                 </div>
                 <h4 className="text-[0.95rem] mb-1.5">{item.title}</h4>
-                <p className="text-gray text-xs leading-relaxed">{item.desc}</p>
+                <p className="text-gray text-xs leading-relaxed dark:text-gray-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -170,8 +172,8 @@ export default function Home() {
       {/* CTA */}
       <section className="relative min-h-[350px] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1920&h=600&fit=crop"
-          alt="Mountain adventure"
+          src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1920&h=600&fit=crop"
+          alt="Mountain trekking journey"
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -187,12 +189,12 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-off-white">
+      <section className="py-24 bg-off-white dark:bg-gray-950">
         <div className="max-w-[1280px] mx-auto px-5">
           <div className="text-center mb-14" data-aos="fade-up">
             <span className="section-tag">FAQ</span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray text-lg max-w-xl mx-auto">Everything you need to know before your adventure</p>
+            <p className="text-gray text-lg max-w-xl mx-auto dark:text-gray-400">Everything you need to know before your adventure</p>
           </div>
           <div className="max-w-[800px] mx-auto" data-aos="fade-up">
             <FAQ faqs={generalFAQs} />

@@ -1,118 +1,165 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaMountain, FaInstagram, FaFacebookF, FaYoutube, FaPhone, FaEnvelope, FaGlobe, FaStar } from 'react-icons/fa'
-import { FiMapPin, FiSend } from 'react-icons/fi'
+import { FaMountain, FaInstagram, FaFacebookF, FaYoutube, FaPhone, FaEnvelope, FaGlobe, FaStar, FaCamera } from 'react-icons/fa'
+import { FiMapPin, FiSend, FiX } from 'react-icons/fi'
 import { testimonials } from '../data/siteData'
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const fileInputRef = useRef(null)
   const [reviewForm, setReviewForm] = useState({ name: '', rating: 5, review: '' })
+  const [reviewImages, setReviewImages] = useState([])
   const [reviewSent, setReviewSent] = useState(false)
+
+  const handleImageUpload = (e) => {
+    const files = Array.from(e.target.files).slice(0, 3)
+    const newImages = files.map((file) => ({
+      file,
+      preview: URL.createObjectURL(file),
+    }))
+    setReviewImages((prev) => [...prev, ...newImages].slice(0, 3))
+  }
+
+  const removeImage = (index) => {
+    setReviewImages((prev) => {
+      const updated = [...prev]
+      URL.revokeObjectURL(updated[index].preview)
+      updated.splice(index, 1)
+      return updated
+    })
+  }
 
   const handleReview = (e) => {
     e.preventDefault()
     if (reviewForm.name.trim() && reviewForm.review.trim()) {
       setReviewSent(true)
+      setReviewImages([])
       setReviewForm({ name: '', rating: 5, review: '' })
       setTimeout(() => setReviewSent(false), 4000)
     }
   }
 
   return (
-    <footer className="relative bg-navy pt-24 pb-0">
-      <div className="absolute -top-15 left-0 right-0 text-navy pointer-events-none">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-[60px]">
+    <footer className="relative bg-navy pt-40 pb-0">
+      <div className="absolute top-0 left-0 right-0 text-navy dark:text-gray-900 pointer-events-none">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-[80px]">
           <path fill="currentColor" d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,42.7C1248,43,1344,53,1392,58.7L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
         </svg>
       </div>
 
       <div className="max-w-[1280px] mx-auto px-5">
 
-        {/* Reviews Section */}
-        <div className="pb-10">
-          <div className="text-center mb-7">
+        {/* Compact Reviews + Write Review side by side */}
+        <div className="pb-10 grid grid-cols-[1fr_1fr] gap-8 items-start max-lg:grid-cols-1">
+          {/* Reviews */}
+          <div>
             <span className="section-tag">Testimonials</span>
-            <h3 className="text-white text-[clamp(1.3rem,2.5vw,1.6rem)] mt-2">Reviews From Our Travelers</h3>
-          </div>
-
-          <div className="grid grid-cols-3 gap-4 mb-8 max-xl:grid-cols-2 max-md:grid-cols-1">
-            {testimonials.slice(0, 3).map((t) => (
-              <div key={t.id} className="glass-card p-5">
-                <div className="flex gap-1 mb-2">
-                  {Array(5).fill(0).map((_, i) => (
-                    <FaStar key={i} className={`text-xs ${i < t.rating ? 'text-gold fill-gold' : 'text-white/20'}`} />
-                  ))}
-                </div>
-                <p className="text-white/60 text-xs leading-relaxed italic mb-3">&ldquo;{t.review}&rdquo;</p>
-                <div className="flex items-center gap-2.5 pt-3 border-t border-white/10">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center font-heading font-bold text-[10px] text-white shrink-0">
+            <h3 className="text-white text-lg mt-2 mb-5 font-heading font-bold">What Travelers Say</h3>
+            <div className="flex flex-col gap-3">
+              {testimonials.slice(0, 4).map((t) => (
+                <div key={t.id} className="flex gap-3 glass-card p-4">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center font-heading font-bold text-[10px] text-white shrink-0">
                     {t.avatar}
                   </div>
-                  <div>
-                    <h5 className="text-white text-xs font-bold">{t.name}</h5>
-                    <span className="text-white/40 text-[10px]">{t.location} • {t.trek}</span>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h5 className="text-white text-xs font-bold">{t.name}</h5>
+                      <span className="text-white/30 text-[10px]">{t.location}</span>
+                      <div className="flex gap-0.5 ml-auto">
+                        {Array(5).fill(0).map((_, i) => (
+                          <FaStar key={i} className={`text-[10px] ${i < t.rating ? 'text-gold fill-gold' : 'text-white/15'}`} />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-white/50 text-[11px] leading-relaxed line-clamp-2">&ldquo;{t.review}&rdquo;</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Write a Review */}
-          <div className="glass-card p-6 max-w-xl mx-auto">
-            <h4 className="text-white text-lg font-heading font-bold mb-1">Share Your Experience</h4>
-            <p className="text-white/50 text-sm mb-5">Traveled with us? Leave a review and help other adventurers!</p>
+          <div>
+            <span className="section-tag">Share</span>
+            <h3 className="text-white text-lg mt-2 mb-5 font-heading font-bold">Write a Review</h3>
+            <div className="glass-card p-5">
+              {reviewSent && (
+                <div className="flex items-center gap-2 p-3 mb-4 rounded-xl bg-accent/10 border border-accent/20 animate-slide-up">
+                  <FaStar className="text-accent text-sm" />
+                  <p className="text-accent text-xs font-medium">Thank you! Your review has been submitted.</p>
+                </div>
+              )}
 
-            {reviewSent && (
-              <div className="flex items-center gap-3 p-4 mb-5 rounded-xl bg-accent/10 border border-accent/20 animate-slide-up">
-                <FaStar className="text-accent text-lg" />
-                <p className="text-accent text-sm font-medium">Thank you! Your review has been submitted successfully.</p>
-              </div>
-            )}
-
-            <form onSubmit={handleReview} className="flex flex-col gap-4">
-              <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-white/60 text-xs font-heading uppercase tracking-wider">Your Name</label>
+              <form onSubmit={handleReview} className="flex flex-col gap-3">
+                <div className="grid grid-cols-2 gap-3">
                   <input
                     type="text"
                     placeholder="Your name"
                     value={reviewForm.name}
                     onChange={(e) => setReviewForm({ ...reviewForm, name: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-white/[0.08] border border-white/[0.12] rounded-xl text-white text-sm font-body placeholder:text-white/30 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+                    className="w-full px-3 py-2.5 bg-white/[0.08] border border-white/[0.12] rounded-lg text-white text-xs font-body placeholder:text-white/30 focus:outline-none focus:border-accent transition-all"
                   />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-white/60 text-xs font-heading uppercase tracking-wider">Your Rating</label>
-                  <div className="flex gap-1.5 py-2">
+                  <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <button
-                        key={star}
-                        type="button"
-                        onClick={() => setReviewForm({ ...reviewForm, rating: star })}
-                        className="bg-transparent border-none cursor-pointer text-2xl transition-transform hover:scale-125"
-                      >
+                      <button key={star} type="button" onClick={() => setReviewForm({ ...reviewForm, rating: star })} className="bg-transparent border-none cursor-pointer text-lg transition-transform hover:scale-125 p-0">
                         <FaStar className={star <= reviewForm.rating ? 'text-gold fill-gold' : 'text-white/20'} />
                       </button>
                     ))}
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-white/60 text-xs font-heading uppercase tracking-wider">Your Review</label>
+
                 <textarea
                   rows="3"
                   placeholder="Share your experience with ASTRAROAM..."
                   value={reviewForm.review}
                   onChange={(e) => setReviewForm({ ...reviewForm, review: e.target.value })}
                   required
-                  className="w-full px-4 py-3 bg-white/[0.08] border border-white/[0.12] rounded-xl text-white text-sm font-body placeholder:text-white/30 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-y min-h-[80px]"
+                  className="w-full px-3 py-2.5 bg-white/[0.08] border border-white/[0.12] rounded-lg text-white text-xs font-body placeholder:text-white/30 focus:outline-none focus:border-accent transition-all resize-y min-h-[70px]"
                 />
-              </div>
-              <button type="submit" className="inline-flex items-center gap-2 self-start px-6 py-2.5 bg-gradient-to-r from-accent to-accent-light text-navy font-heading font-bold text-xs border-none rounded-full cursor-pointer transition-all duration-300 shadow-lg uppercase tracking-wider hover:-translate-y-0.5">
-                Submit Review <FiSend />
-              </button>
-            </form>
+
+                {/* Image Upload */}
+                <div>
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    accept="image/*"
+                    multiple
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                  {reviewImages.length < 3 && (
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/[0.06] border border-dashed border-white/20 rounded-lg text-white/50 text-[11px] cursor-pointer transition-all hover:border-accent hover:text-accent"
+                    >
+                      <FaCamera /> Add Photos ({reviewImages.length}/3)
+                    </button>
+                  )}
+                  {reviewImages.length > 0 && (
+                    <div className="flex gap-2 mt-2">
+                      {reviewImages.map((img, i) => (
+                        <div key={i} className="relative w-14 h-14 rounded-lg overflow-hidden group">
+                          <img src={img.preview} alt="" className="w-full h-full object-cover" />
+                          <button
+                            type="button"
+                            onClick={() => removeImage(i)}
+                            className="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                          >
+                            <FiX />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <button type="submit" className="inline-flex items-center gap-2 self-start px-5 py-2 bg-gradient-to-r from-accent to-accent-light text-navy font-heading font-bold text-[11px] border-none rounded-full cursor-pointer transition-all duration-300 shadow-lg uppercase tracking-wider hover:-translate-y-0.5">
+                  Submit <FiSend />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
 

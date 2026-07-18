@@ -6,7 +6,6 @@ export const destinations = [
     location: 'Kinnaur, Himachal Pradesh',
     description: 'The last inhabited village near the Indo-Tibet border, Chitkul offers pristine views of snow-capped peaks, ancient wooden temples, and lush green meadows that stretch as far as the eye can see.',
     shortDescription: 'India\'s last village on the Indo-Tibet border with stunning mountain views.',
-    price: 8999,
     duration: '3N/4D',
     difficulty: 'Easy',
     altitude: '3,450m',
@@ -40,7 +39,6 @@ export const destinations = [
     location: 'Dharamshala, Himachal Pradesh',
     description: 'Triund is a breathtaking hilltop meadow situated at the foot of the Dhauladhar ranges. Known as the "Crown of Dharamshala," it offers spectacular sunrise views and a magical night sky.',
     shortDescription: 'The Crown of Dharamshala with majestic Dhauladhar views.',
-    price: 5499,
     duration: '2N/3D',
     difficulty: 'Easy-Moderate',
     altitude: '2,828m',
@@ -73,7 +71,6 @@ export const destinations = [
     location: 'Kangra, Himachal Pradesh',
     description: 'A stunning glacial lake nestled in the Dhauladhar range at an altitude of 2,950m. The turquoise blue waters reflect the surrounding snow peaks creating a photographer\'s paradise.',
     shortDescription: 'Glacial turquoise lake surrounded by majestic Dhauladhar peaks.',
-    price: 6999,
     duration: '2N/3D',
     difficulty: 'Easy-Moderate',
     altitude: '2,950m',
@@ -105,7 +102,6 @@ export const destinations = [
     location: 'Kullu, Himachal Pradesh',
     description: 'Famous for its natural hot springs at 3,050m altitude, Kheerganga is a paradise trekker\'s reward. The trek passes through Parvati Valley\'s stunning landscapes and dense pine forests.',
     shortDescription: 'Natural hot springs at 3,050m in the stunning Parvati Valley.',
-    price: 5999,
     duration: '2N/3D',
     difficulty: 'Moderate',
     altitude: '3,050m',
@@ -137,7 +133,6 @@ export const destinations = [
     location: 'Kullu, Himachal Pradesh',
     description: 'The adventure capital of India, Manali is a stunning hill station surrounded by towering peaks, ancient temples, and world-class skiing, paragliding, and river rafting experiences.',
     shortDescription: 'India\'s adventure capital with snow peaks, rivers, and endless activities.',
-    price: 7499,
     duration: '3N/4D',
     difficulty: 'Easy',
     altitude: '2,050m',
@@ -170,7 +165,6 @@ export const destinations = [
     location: 'Kullu, Himachal Pradesh',
     description: 'Known as the "Mini Israel of India," Kasol is a backpacker\'s haven nestled in the Parvati Valley. Famous for its cafés, Israeli cuisine, and as a gateway to countless treks.',
     shortDescription: 'The Mini Israel of India – backpacker\'s paradise in Parvati Valley.',
-    price: 4999,
     duration: '2N/3D',
     difficulty: 'Easy',
     altitude: '1,640m',
@@ -202,7 +196,6 @@ export const destinations = [
     location: 'Kullu, Himachal Pradesh',
     description: 'A remote and unspoiled village perched at 2,400m in the Parvati Valley, Tosh offers raw Himalayan beauty with snow-capped peaks, traditional stone houses, and absolute tranquility.',
     shortDescription: 'Unspoiled Himalayan village with raw beauty and serene vibes.',
-    price: 5499,
     duration: '2N/3D',
     difficulty: 'Easy-Moderate',
     altitude: '2,400m',
@@ -234,7 +227,6 @@ export const destinations = [
     location: 'Lahaul-Spiti, Himachal Pradesh',
     description: 'The "Middle Land" between India and Tibet, Spiti is a cold desert mountain valley with ancient monasteries, crystal-clear lakes, and some of the highest motorable roads in the world.',
     shortDescription: 'India\'s cold desert with ancient monasteries and otherworldly landscapes.',
-    price: 18999,
     duration: '7N/8D',
     difficulty: 'Moderate-Difficult',
     altitude: '4,500m',
@@ -278,7 +270,6 @@ export const treks = [
     distance: '9 km',
     difficulty: 'Easy-Moderate',
     bestTime: 'March – December',
-    price: 5499,
     duration: '2N/3D',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
     highlights: ['Stunning sunrise over Dhauladhar', 'Night camping under stars', 'Snow line café visit', 'Rhododendron forests']
@@ -293,7 +284,6 @@ export const treks = [
     distance: '14 km',
     difficulty: 'Easy-Moderate',
     bestTime: 'March – November',
-    price: 6999,
     duration: '2N/3D',
     image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=600&fit=crop',
     highlights: ['Turquoise glacial lake', 'Camp by the lake', 'Dense oak forests', 'Dhauladhar base views']
@@ -308,7 +298,6 @@ export const treks = [
     distance: '12 km',
     difficulty: 'Moderate',
     bestTime: 'March – November',
-    price: 5999,
     duration: '2N/3D',
     image: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop',
     highlights: ['Natural hot springs', 'Parvati Valley views', 'Shiva temple', 'Stunning waterfalls']
@@ -323,7 +312,6 @@ export const treks = [
     distance: '62 km',
     difficulty: 'Difficult',
     bestTime: 'June – September',
-    price: 15999,
     duration: '6N/7D',
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop',
     highlights: ['4,900m pass crossing', 'Biome transition', 'Campsite at 4,200m', 'Pin Valley views']
@@ -338,7 +326,6 @@ export const treks = [
     distance: '35 km',
     difficulty: 'Moderate',
     bestTime: 'June – September',
-    price: 12999,
     duration: '4N/5D',
     image: 'https://images.unsplash.com/photo-1595814294526-84287e1bde23?w=800&h=600&fit=crop',
     highlights: ['Kullu to Lahaul crossing', 'Shea Goru camp', 'Chandratal Lake side trip', 'Dramatic landscape shift']
@@ -353,7 +340,6 @@ export const treks = [
     distance: '5 km',
     difficulty: 'Easy-Moderate',
     bestTime: 'Year Round',
-    price: 7499,
     duration: '2N/3D',
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop',
     highlights: ['World\'s highest Shiva temple', '360° Himalayan views', 'Rhododendron forests', 'Snow trek in winter']
@@ -366,7 +352,6 @@ export const packages = [
     name: 'Himachal Explorer',
     duration: '6N/7D',
     destinations: ['Manali', 'Kasol', 'Triund'],
-    price: 16999,
     description: 'The ultimate Himachal Pradesh experience covering three iconic destinations.',
     image: 'https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=800&h=600&fit=crop'
   },
@@ -375,7 +360,6 @@ export const packages = [
     name: 'Spiti Valley Road Trip',
     duration: '7N/8D',
     destinations: ['Manali', 'Kaza', 'Chitkul', 'Kalpa'],
-    price: 22999,
     description: 'An epic road trip through the cold desert landscapes of Spiti.',
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop'
   },
@@ -384,7 +368,6 @@ export const packages = [
     name: 'Parvati Valley Retreat',
     duration: '4N/5D',
     destinations: ['Kasol', 'Kheerganga', 'Tosh'],
-    price: 12999,
     description: 'Immerse yourself in the mystical Parvati Valley with treks and hot springs.',
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop'
   },
@@ -393,7 +376,6 @@ export const packages = [
     name: 'Uttarakhand Spiritual Trek',
     duration: '5N/6D',
     destinations: ['Chopta', 'Tungnath', 'Deoriatal'],
-    price: 14999,
     description: 'A spiritual journey to the world\'s highest Shiva temple with stunning trekking.',
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop'
   }

@@ -5,11 +5,11 @@ import { testimonials } from '../data/siteData'
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-navy">
+    <section className="py-24 bg-navy overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5">
-        <div className="text-center mb-14" data-aos="fade-up">
-          <span className="section-tag">Testimonials</span>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] text-white mb-4">What Our Travelers Say</h2>
+        <div className="text-center mb-14 " data-aos="fade-up">
+          <span className="section-tag ">Testimonials</span>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] text-white mb-4 mt-2">What Our Travelers Say</h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Real experiences from real adventurers who explored with ASTRAROAM
           </p>
@@ -17,11 +17,12 @@ export default function Testimonials() {
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={24}
-          slidesPerView={1}
+          slidesPerView={1.15}
+          centeredSlides={true}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
-          breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
-          className="pb-16 [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-8 [&_.swiper-pagination-bullet]:!bg-white/30 [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5 [&_.swiper-pagination-bullet-active]:!bg-accent [&_.swiper-pagination-bullet-active]:!w-8 [&_.swiper-pagination-bullet-active]:!rounded-[5px]"
+          breakpoints={{ 640: { slidesPerView: 2.15, centeredSlides: false }, 1024: { slidesPerView: 3.15, centeredSlides: false } }}
+          className="!overflow-visible pb-16 [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-6 [&_.swiper-pagination-bullet]:!bg-white/30 [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!h-2.5 [&_.swiper-pagination-bullet-active]:!bg-accent [&_.swiper-pagination-bullet-active]:!w-8 [&_.swiper-pagination-bullet-active]:!rounded-[5px]"
         >
           {testimonials.map((t) => (
             <SwiperSlide key={t.id}>

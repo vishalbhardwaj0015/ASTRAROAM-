@@ -13,12 +13,12 @@ export default function FAQ({ faqs }) {
       {faqs.map((faq, i) => (
         <div
           key={i}
-          className={`border rounded-xl overflow-hidden transition-all duration-300 ${
-            openIndex === i ? 'border-primary shadow-sm' : 'border-gray-100'
+          className={`border rounded-xl overflow-hidden transition-all duration-300 dark:bg-gray-800 ${
+            openIndex === i ? 'border-primary shadow-sm dark:border-primary' : 'border-gray-100 dark:border-gray-700'
           }`}
         >
           <button
-            className="w-full flex items-center justify-between py-4 px-6 bg-transparent border-none cursor-pointer font-heading font-semibold text-sm text-navy text-left gap-4 transition-colors hover:text-primary"
+            className="w-full flex items-center justify-between py-4 px-6 bg-transparent dark:bg-gray-800 border-none cursor-pointer font-heading font-semibold text-sm text-navy dark:text-gray-100 text-left gap-4 transition-colors hover:text-primary"
             onClick={() => toggle(i)}
           >
             <span>{faq.q}</span>
@@ -34,7 +34,7 @@ export default function FAQ({ faqs }) {
             }`}
           >
             <div className="px-6 pb-4">
-              <p className="text-gray text-sm leading-relaxed">{faq.a}</p>
+              <p className="text-gray dark:text-gray-300 text-sm leading-relaxed">{faq.a}</p>
             </div>
           </div>
         </div>
