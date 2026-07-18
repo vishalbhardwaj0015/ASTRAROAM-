@@ -230,10 +230,10 @@ export default function BookingForm() {
       {/* Trust badges */}
       <div className="grid grid-cols-4 gap-4 mt-6 max-lg:grid-cols-2 max-md:grid-cols-1">
         {[
-          [<FaShieldAlt />, 'Safe & Secure', 'Verified & trusted platform'],
-          [<FaHeadset />, '24/7 Support', 'Round-the-clock assistance'],
-          [<FaStar />, 'Premium Quality', 'Handpicked experiences'],
-          [<FaMapMarkedAlt />, 'Expert Guides', 'Certified local professionals'],
+          [FaShieldAlt, 'Safe & Secure', 'Verified & trusted platform'],
+          [FaHeadset, '24/7 Support', 'Round-the-clock assistance'],
+          [FaStar, 'Premium Quality', 'Handpicked experiences'],
+          [FaMapMarkedAlt, 'Expert Guides', 'Certified local professionals'],
         ].map(([Icon, title, desc], i) => (
           <div key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay={i * 80}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-lg shrink-0">
