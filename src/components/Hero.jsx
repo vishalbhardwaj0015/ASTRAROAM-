@@ -54,9 +54,13 @@ export default function Hero() {
       <div className="absolute left-12 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-accent/30 to-transparent z-10 max-lg:hidden" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-[1280px] mx-auto px-8 pt-20 w-full">
+      <div className="relative z-20 max-w-[1280px] mx-auto px-8 pt-28 lg:pt-24 w-full">
         <div className="max-w-[700px]">
           {/* Badge */}
+          <div className="hero-badge inline-flex items-center gap-3 font-body text-[0.65rem] font-medium uppercase tracking-premium text-accent mb-8 px-5 py-2.5 border border-accent/25 rounded-sm bg-accent/[0.06] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            Premium Himalayan Experiences Since 2021
+          </div>
 
           {/* Title */}
           <h1 className="hero-title font-heading text-white leading-[1.05] mb-7" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}>

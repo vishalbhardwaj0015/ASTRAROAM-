@@ -17,6 +17,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Booking from './pages/Booking'
 import NotFound from './pages/NotFound'
+import ErrorBoundary from './components/ErrorBoundary'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -41,18 +42,20 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/destinations" element={<Destinations />} />
-          <Route path="/destination/:slug" element={<DestinationDetail />} />
-          <Route path="/treks" element={<Treks />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/booking/:destination" element={<Booking />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/destinations" element={<Destinations />} />
+            <Route path="/destination/:slug" element={<DestinationDetail />} />
+            <Route path="/treks" element={<Treks />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/booking/:destination" element={<Booking />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
       </main>
       <Footer />
     </div>
