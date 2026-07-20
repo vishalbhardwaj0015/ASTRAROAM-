@@ -13,6 +13,7 @@ export default class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
+      const err = this.state.error
       return (
         <div className="min-h-[60vh] flex items-center justify-center text-center px-8">
           <div>

@@ -47,10 +47,10 @@ export default function DestinationDetail() {
               {/* Info Grid */}
               <div className="grid grid-cols-4 gap-4 p-7 bg-white dark:bg-gray-800 rounded-lg shadow-premium border border-gray-100/80 dark:border-gray-700/50 mb-12 max-md:grid-cols-2 max-sm:grid-cols-1" data-aos="fade-up">
                 {[
-                  [<FaMountain />, 'Altitude', dest.altitude],
-                  [<FiClock />, 'Duration', dest.duration],
-                  [<FiBarChart2 />, 'Difficulty', dest.difficulty],
-                  [<FiCalendar />, 'Best Time', dest.bestTime],
+                  [FaMountain, 'Altitude', dest.altitude],
+                  [FiClock, 'Duration', dest.duration],
+                  [FiBarChart2, 'Difficulty', dest.difficulty],
+                  [FiCalendar, 'Best Time', dest.bestTime],
                 ].map(([Icon, label, value], i) => (
                   <div key={i} className="flex items-center gap-3">
                     <Icon className="text-accent text-lg shrink-0" />
