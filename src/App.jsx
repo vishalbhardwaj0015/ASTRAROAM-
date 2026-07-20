@@ -34,7 +34,10 @@ function App() {
   }, [])
 
   useEffect(() => {
-    AOS.refresh()
+    const timer = setTimeout(() => {
+      AOS.refresh()
+    }, 100)
+    return () => clearTimeout(timer)
   }, [location.pathname])
 
   return (
