@@ -11,6 +11,10 @@ export const destinations = [
     altitude: '3,450m',
     bestTime: 'May – October',
     distance: '12 km',
+    price: 8499,
+    originalPrice: 10999,
+    rating: 4.8,
+    reviewCount: 124,
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&h=800&fit=crop',
@@ -44,6 +48,10 @@ export const destinations = [
     altitude: '2,828m',
     bestTime: 'March – December',
     distance: '9 km',
+    price: 4999,
+    originalPrice: 6499,
+    rating: 4.9,
+    reviewCount: 287,
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
@@ -76,6 +84,10 @@ export const destinations = [
     altitude: '2,950m',
     bestTime: 'March – November',
     distance: '14 km',
+    price: 5499,
+    originalPrice: 6999,
+    rating: 4.7,
+    reviewCount: 98,
     image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1200&h=800&fit=crop',
@@ -107,6 +119,10 @@ export const destinations = [
     altitude: '3,050m',
     bestTime: 'March – November',
     distance: '12 km',
+    price: 4499,
+    originalPrice: 5999,
+    rating: 4.8,
+    reviewCount: 312,
     image: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&h=800&fit=crop',
@@ -138,6 +154,10 @@ export const destinations = [
     altitude: '2,050m',
     bestTime: 'Year Round',
     distance: 'N/A',
+    price: 12999,
+    originalPrice: 15999,
+    rating: 4.9,
+    reviewCount: 456,
     image: 'https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&h=800&fit=crop',
@@ -170,6 +190,10 @@ export const destinations = [
     altitude: '1,640m',
     bestTime: 'Year Round',
     distance: 'N/A',
+    price: 5999,
+    originalPrice: 7499,
+    rating: 4.7,
+    reviewCount: 203,
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&h=800&fit=crop',
@@ -201,6 +225,10 @@ export const destinations = [
     altitude: '2,400m',
     bestTime: 'March – November',
     distance: '4 km',
+    price: 4999,
+    originalPrice: 6499,
+    rating: 4.6,
+    reviewCount: 87,
     image: 'https://images.unsplash.com/photo-1595814294526-84287e1bde23?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1595814294526-84287e1bde23?w=1200&h=800&fit=crop',
@@ -232,6 +260,10 @@ export const destinations = [
     altitude: '4,500m',
     bestTime: 'June – September',
     distance: '450 km',
+    price: 24999,
+    originalPrice: 29999,
+    rating: 4.9,
+    reviewCount: 178,
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&h=800&fit=crop',
@@ -271,6 +303,8 @@ export const treks = [
     difficulty: 'Easy-Moderate',
     bestTime: 'March – December',
     duration: '2N/3D',
+    price: 4999,
+    originalPrice: 6499,
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
     highlights: ['Stunning sunrise over Dhauladhar', 'Night camping under stars', 'Snow line café visit', 'Rhododendron forests']
   },
@@ -285,6 +319,8 @@ export const treks = [
     difficulty: 'Easy-Moderate',
     bestTime: 'March – November',
     duration: '2N/3D',
+    price: 5499,
+    originalPrice: 6999,
     image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=600&fit=crop',
     highlights: ['Turquoise glacial lake', 'Camp by the lake', 'Dense oak forests', 'Dhauladhar base views']
   },
@@ -299,6 +335,8 @@ export const treks = [
     difficulty: 'Moderate',
     bestTime: 'March – November',
     duration: '2N/3D',
+    price: 4499,
+    originalPrice: 5999,
     image: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&h=600&fit=crop',
     highlights: ['Natural hot springs', 'Parvati Valley views', 'Shiva temple', 'Stunning waterfalls']
   },
@@ -313,6 +351,8 @@ export const treks = [
     difficulty: 'Difficult',
     bestTime: 'June – September',
     duration: '6N/7D',
+    price: 14999,
+    originalPrice: 17999,
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop',
     highlights: ['4,900m pass crossing', 'Biome transition', 'Campsite at 4,200m', 'Pin Valley views']
   },
@@ -327,6 +367,8 @@ export const treks = [
     difficulty: 'Moderate',
     bestTime: 'June – September',
     duration: '4N/5D',
+    price: 9999,
+    originalPrice: 12999,
     image: 'https://images.unsplash.com/photo-1595814294526-84287e1bde23?w=800&h=600&fit=crop',
     highlights: ['Kullu to Lahaul crossing', 'Shea Goru camp', 'Chandratal Lake side trip', 'Dramatic landscape shift']
   },
@@ -341,6 +383,8 @@ export const treks = [
     difficulty: 'Easy-Moderate',
     bestTime: 'Year Round',
     duration: '2N/3D',
+    price: 5999,
+    originalPrice: 7499,
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop',
     highlights: ['World\'s highest Shiva temple', '360° Himalayan views', 'Rhododendron forests', 'Snow trek in winter']
   }
@@ -353,6 +397,8 @@ export const packages = [
     duration: '6N/7D',
     destinations: ['Manali', 'Kasol', 'Triund'],
     description: 'The ultimate Himachal Pradesh experience covering three iconic destinations.',
+    price: 18999,
+    originalPrice: 23999,
     image: 'https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=800&h=600&fit=crop'
   },
   {
@@ -361,6 +407,8 @@ export const packages = [
     duration: '7N/8D',
     destinations: ['Manali', 'Kaza', 'Chitkul', 'Kalpa'],
     description: 'An epic road trip through the cold desert landscapes of Spiti.',
+    price: 28999,
+    originalPrice: 34999,
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop'
   },
   {
@@ -369,6 +417,8 @@ export const packages = [
     duration: '4N/5D',
     destinations: ['Kasol', 'Kheerganga', 'Tosh'],
     description: 'Immerse yourself in the mystical Parvati Valley with treks and hot springs.',
+    price: 11999,
+    originalPrice: 14999,
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop'
   },
   {
@@ -377,6 +427,8 @@ export const packages = [
     duration: '5N/6D',
     destinations: ['Chopta', 'Tungnath', 'Deoriatal'],
     description: 'A spiritual journey to the world\'s highest Shiva temple with stunning trekking.',
+    price: 14999,
+    originalPrice: 18999,
     image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop'
   }
 ]
@@ -384,56 +436,56 @@ export const packages = [
 export const testimonials = [
   {
     id: 1,
-    name: 'Sarah Mitchell',
-    avatar: 'SM',
-    location: 'London, UK',
+    name: 'Rohit Sharma',
+    location: 'Delhi',
     rating: 5,
-    review: 'ASTRAROAM made our Triund trek absolutely magical. The guide was incredible, the camping setup was premium, and the sunset views were breathtaking. Will definitely book again!',
-    trek: 'Triund Trek'
+    review: 'Triund trek with ASTRAROAM was my first trek ever. The guide was so patient and encouraging. The camping setup at the top was way better than expected. Watching the sunrise over Dhauladhar was life-changing!',
+    trek: 'Triund Trek',
+    date: '2024-10'
   },
   {
     id: 2,
-    name: 'James Cooper',
-    avatar: 'JC',
-    location: 'Sydney, Australia',
+    name: 'Ananya Mehta',
+    location: 'Mumbai',
     rating: 5,
-    review: 'Our Spiti Valley road trip was a dream come true. Everything from the hotels to the itinerary was perfectly planned. The team handled the challenging roads like true professionals.',
-    trek: 'Spiti Valley'
+    review: 'Booked the Spiti Valley road trip for my birthday. Every single detail was taken care of — from the hotels to the route planning. The team even arranged a surprise cake at Kaza. Absolutely unforgettable!',
+    trek: 'Spiti Valley',
+    date: '2024-09'
   },
   {
     id: 3,
-    name: 'Priya Patel',
-    avatar: 'PP',
-    location: 'Mumbai, India',
+    name: 'Vikram Singh',
+    location: 'Chandigarh',
     rating: 5,
-    review: 'The Kheerganga trek with ASTRAROAM was my first trek experience. The hot springs at the top were heavenly. Professional service and amazing value for money.',
-    trek: 'Kheerganga Trek'
+    review: 'Kheerganga trek was on my bucket list for years. ASTRAROAM made it happen with zero hassle. The hot springs at the top after a long trek — pure bliss. Budget-friendly and professional.',
+    trek: 'Kheerganga Trek',
+    date: '2024-11'
   },
   {
     id: 4,
-    name: 'Emma Rodriguez',
-    avatar: 'ER',
-    location: 'Barcelona, Spain',
+    name: 'Neha Kapoor',
+    location: 'Bangalore',
     rating: 4,
-    review: 'Beautiful Manali trip organized perfectly. The Solang Valley adventure was the highlight. Minor hiccups but the team was very responsive. Highly recommended for international travelers.',
-    trek: 'Manali Trip'
+    review: 'Took my family on the Manali trip. Kids loved Solang Valley activities. The hotel was great and the cab driver was super cooperative. Only suggestion — more food options would be nice.',
+    trek: 'Manali Trip',
+    date: '2024-12'
   },
   {
     id: 5,
-    name: 'Hiroshi Tanaka',
-    avatar: 'HT',
-    location: 'Tokyo, Japan',
+    name: 'Arjun Patel',
+    location: 'Ahmedabad',
     rating: 5,
-    review: 'Kareri Lake trek was surreal. The campsite by the lake with mountain views is something I\'ll never forget. ASTRAROAM staff was friendly and knowledgeable.',
-    trek: 'Kareri Lake Trek'
+    review: 'Third time booking with ASTRAROAM. Done Triund, Kheerganga, and now Hampta Pass. The quality is consistently amazing. These guys know Himachal like the back of their hand.',
+    trek: 'Hampta Pass Trek',
+    date: '2025-01'
   },
   {
     id: 6,
-    name: 'Lisa Andersen',
-    avatar: 'LA',
-    location: 'Copenhagen, Denmark',
+    name: 'Shreya Iyer',
+    location: 'Pune',
     rating: 5,
-    review: 'Third time booking with ASTRAROAM. Consistent quality and amazing experiences. The Chopta Tungnath winter trek was absolutely spectacular! Best travel company in Himachal.',
-    trek: 'Chopta Tungnath'
+    review: 'Kareri Lake trek was pure magic. Waking up next to a glacial lake with Dhauladhar peaks in front of you — no words can describe it. The camp setup was cozy and the food was homely.',
+    trek: 'Kareri Lake Trek',
+    date: '2024-10'
   }
 ]

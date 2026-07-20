@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { FiArrowRight, FiMap, FiClock, FiCalendar } from 'react-icons/fi'
+import { FiArrowRight, FiMap, FiClock, FiCalendar, FiStar } from 'react-icons/fi'
 import { FaMountain } from 'react-icons/fa'
 
 export default function TrekCard({ trek }) {
-  const { slug, name, location, altitude, distance, difficulty, bestTime, duration, image, highlights } = trek
+  const { slug, name, location, altitude, distance, difficulty, bestTime, duration, image, highlights, price, originalPrice } = trek
 
   return (
     <div className="group premium-card" data-aos="fade-up">
@@ -16,6 +16,18 @@ export default function TrekCard({ trek }) {
             {difficulty}
           </span>
         </div>
+        {/* Price badge */}
+        {price && (
+          <div className="absolute top-5 right-5">
+            <div className="bg-white/90 backdrop-blur-sm text-primary px-3 py-1.5 rounded-sm font-body">
+              <span className="text-[0.65rem] font-bold">₹{price.toLocaleString('en-IN')}</span>
+              {originalPrice && (
+                <span className="text-[0.55rem] line-through opacity-50 ml-1.5">₹{originalPrice.toLocaleString('en-IN')}</span>
+              )}
+              <span className="text-[0.5rem] block opacity-60 -mt-0.5">/person</span>
+            </div>
+          </div>
+        )}
         {/* Name & Location */}
         <div className="absolute bottom-5 left-5 right-5">
           <h3 className="text-white font-heading text-xl font-bold mb-1.5">{name}</h3>

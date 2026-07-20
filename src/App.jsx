@@ -16,6 +16,7 @@ import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Booking from './pages/Booking'
+import NotFound from './pages/NotFound'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -50,7 +51,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/booking/:destination" element={<Booking />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
-import { FiGlobe, FiUsers, FiPackage, FiHeart, FiShield, FiDollarSign, FiHeadphones, FiArrowRight, FiPlay } from 'react-icons/fi'
-import { FaMountain } from 'react-icons/fa'
+import { FiGlobe, FiUsers, FiPackage, FiHeart, FiShield, FiDollarSign, FiHeadphones, FiArrowRight, FiPhone } from 'react-icons/fi'
+import { FaMountain, FaStar } from 'react-icons/fa'
 import Hero from '../components/Hero'
 import DestinationCard from '../components/DestinationCard'
 import TrekCard from '../components/TrekCard'
@@ -24,6 +24,13 @@ const whyChooseUs = [
   { icon: <FiDollarSign />, title: 'Best Value', desc: 'Premium experiences at competitive rates' },
   { icon: <FiPackage />, title: 'Custom Trips', desc: 'Flexible itineraries for every traveler' },
   { icon: <FiHeadphones />, title: '24/7 Support', desc: 'Round-the-clock assistance during your trip' },
+]
+
+const stats = [
+  { number: '500+', label: 'Happy Travelers', icon: <FiUsers /> },
+  { number: '50+', label: 'Curated Treks', icon: <FaMountain /> },
+  { number: '15+', label: 'Destinations', icon: <FiGlobe /> },
+  { number: '4.9', label: 'Google Rating', icon: <FaStar /> },
 ]
 
 const generalFAQs = [
@@ -48,6 +55,24 @@ export default function Home() {
   return (
     <div className="home-page">
       <Hero />
+
+      {/* Stats Banner */}
+      <section className="py-16 bg-navy relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(201,168,76,0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        <div className="relative max-w-[1280px] mx-auto px-8">
+          <div className="grid grid-cols-4 gap-8 max-lg:grid-cols-2 max-sm:grid-cols-2">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center" data-aos="fade-up" data-aos-delay={i * 100}>
+                <div className="w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center text-accent mx-auto mb-3">
+                  {stat.icon}
+                </div>
+                <span className="block font-heading text-2xl font-bold text-white">{stat.number}</span>
+                <span className="text-white/40 text-xs font-body uppercase tracking-wider">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-32 bg-off-white dark:bg-gray-900">
@@ -98,7 +123,6 @@ export default function Home() {
 
       {/* Treks Section */}
       <section className="py-32 bg-navy relative overflow-hidden">
-        {/* Subtle texture */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(201,168,76,0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         <div className="relative max-w-[1280px] mx-auto px-8">
           <div className="text-center mb-16" data-aos="fade-up">
@@ -137,21 +161,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video / Experience Banner */}
-      <section className="relative h-[450px] max-md:h-[350px]">
+      {/* CTA Banner */}
+      <section className="relative h-[400px] max-md:h-[350px] flex items-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&h=800&fit=crop"
-          alt="Trekking adventure in the mountains"
+          alt="Mountain adventure"
           loading="lazy"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-primary/70" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5" data-aos="zoom-in">
-          <button className="w-20 h-20 rounded-full bg-accent/90 border-none text-primary text-[1.8rem] flex items-center justify-center cursor-pointer transition-all duration-500 shadow-gold hover:scale-110 hover:shadow-gold-lg">
-            <FiPlay />
-          </button>
-          <h2 className="text-white text-3xl font-heading">Experience the Thrill</h2>
-          <p className="text-white/50 font-light">Watch our adventures unfold</p>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(201,168,76,0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-8 w-full" data-aos="fade-up">
+          <div className="max-w-[600px]">
+            <span className="section-tag">Ready to Explore?</span>
+            <h2 className="text-white text-[clamp(1.8rem,4vw,2.8rem)] mt-4 mb-5 font-heading">Your Himalayan Adventure Starts Here</h2>
+            <div className="premium-divider !mb-6" />
+            <p className="text-white/50 text-lg mb-8 font-light">Talk to our travel experts and plan your perfect trip. No hidden charges, best price guaranteed.</p>
+            <div className="flex gap-4 flex-wrap">
+              <Link to="/booking" className="btn-accent">Book Now <FiArrowRight /></Link>
+              <a href="tel:+917018599060" className="btn-outline flex items-center gap-2"><FiPhone /> Call Now</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -179,28 +209,6 @@ export default function Home() {
       </section>
 
       <Gallery />
-
-      {/* CTA */}
-      <section className="relative min-h-[400px] flex items-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1920&h=600&fit=crop"
-          alt="Mountain trekking journey"
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-navy/95" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(201,168,76,0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-        <div className="relative z-10 max-w-[1280px] mx-auto px-8 w-full text-center py-24" data-aos="zoom-in">
-          <span className="section-tag">Ready to Explore?</span>
-          <h2 className="text-white text-[clamp(1.8rem,4vw,2.8rem)] mt-4 mb-5 font-heading">Ready for Your Next Adventure?</h2>
-          <div className="premium-divider" />
-          <p className="text-white/45 text-lg mb-12 max-w-lg mx-auto font-light mt-6">Book your dream Himalayan trip today and create memories that last a lifetime.</p>
-          <div className="flex gap-5 justify-center flex-wrap">
-            <Link to="/booking" className="btn-accent">Book Now <FiArrowRight /></Link>
-            <Link to="/destinations" className="btn-outline">Explore Tours</Link>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-32 bg-off-white dark:bg-gray-950">
