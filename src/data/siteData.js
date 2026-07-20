@@ -384,56 +384,56 @@ export const packages = [
 export const testimonials = [
   {
     id: 1,
-    name: 'Rohit Sharma',
-    avatar: 'RS',
-    location: 'Delhi',
+    name: 'Sarah Mitchell',
+    avatar: 'SM',
+    location: 'London, UK',
     rating: 5,
     review: 'ASTRAROAM made our Triund trek absolutely magical. The guide was incredible, the camping setup was premium, and the sunset views were breathtaking. Will definitely book again!',
     trek: 'Triund Trek'
   },
   {
     id: 2,
-    name: 'Priya Patel',
-    avatar: 'PP',
-    location: 'Mumbai',
+    name: 'James Cooper',
+    avatar: 'JC',
+    location: 'Sydney, Australia',
     rating: 5,
-    review: 'Our Spiti Valley road trip was a dream come true. Everything from the hotels to the itinerary was perfectly planned. The team handled the challenging roads like professionals.',
+    review: 'Our Spiti Valley road trip was a dream come true. Everything from the hotels to the itinerary was perfectly planned. The team handled the challenging roads like true professionals.',
     trek: 'Spiti Valley'
   },
   {
     id: 3,
-    name: 'Ankit Verma',
-    avatar: 'AV',
-    location: 'Bangalore',
+    name: 'Priya Patel',
+    avatar: 'PP',
+    location: 'Mumbai, India',
     rating: 5,
     review: 'The Kheerganga trek with ASTRAROAM was my first trek experience. The hot springs at the top were heavenly. Professional service and amazing value for money.',
     trek: 'Kheerganga Trek'
   },
   {
     id: 4,
-    name: 'Sneha Gupta',
-    avatar: 'SG',
-    location: 'Pune',
+    name: 'Emma Rodriguez',
+    avatar: 'ER',
+    location: 'Barcelona, Spain',
     rating: 4,
-    review: 'Beautiful Manali trip organized perfectly. The Solang Valley adventure was the highlight. Minor hiccups but the team was very responsive. Highly recommended.',
+    review: 'Beautiful Manali trip organized perfectly. The Solang Valley adventure was the highlight. Minor hiccups but the team was very responsive. Highly recommended for international travelers.',
     trek: 'Manali Trip'
   },
   {
     id: 5,
-    name: 'Vikash Kumar',
-    avatar: 'VK',
-    location: 'Kolkata',
+    name: 'Hiroshi Tanaka',
+    avatar: 'HT',
+    location: 'Tokyo, Japan',
     rating: 5,
     review: 'Kareri Lake trek was surreal. The campsite by the lake with mountain views is something I\'ll never forget. ASTRAROAM staff was friendly and knowledgeable.',
     trek: 'Kareri Lake Trek'
   },
   {
     id: 6,
-    name: 'Meera Joshi',
-    avatar: 'MJ',
-    location: 'Jaipur',
+    name: 'Lisa Andersen',
+    avatar: 'LA',
+    location: 'Copenhagen, Denmark',
     rating: 5,
-    review: 'Third time booking with ASTRAROAM. Consistent quality and amazing experiences. The Chopta Tungnath winter trek was absolutely spectacular!',
+    review: 'Third time booking with ASTRAROAM. Consistent quality and amazing experiences. The Chopta Tungnath winter trek was absolutely spectacular! Best travel company in Himachal.',
     trek: 'Chopta Tungnath'
   }
 ]

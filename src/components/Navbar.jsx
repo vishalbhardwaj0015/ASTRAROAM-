@@ -20,7 +20,7 @@ export default function Navbar() {
   const { dark, toggleTheme } = useTheme()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -36,55 +36,63 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-700 ${
         scrolled
-          ? 'h-[70px] bg-navy/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg shadow-black/20'
-          : 'h-20 bg-transparent'
+          ? 'h-[72px] bg-primary/95 dark:bg-gray-900/95 backdrop-blur-2xl shadow-premium border-b border-white/[0.04]'
+          : 'h-[88px] bg-transparent'
       }`}
     >
-      <div className="w-full max-w-[1280px] mx-auto px-5 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 z-[1001]">
-          <FaMountain className="text-accent text-2xl" />
-          <span className="font-heading font-extrabold text-xl text-white tracking-widest">
-            ASTRA<span className="text-accent">ROAM</span>
-          </span>
+      <div className="w-full max-w-[1280px] mx-auto px-8 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3 z-[1001] group">
+          <div className="w-9 h-9 rounded-sm bg-accent/10 flex items-center justify-center border border-accent/20 transition-all duration-500 group-hover:bg-accent/20 group-hover:border-accent/40">
+            <FaMountain className="text-accent text-base" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-heading font-bold text-lg text-white tracking-wide leading-none">
+              ASTRA<span className="text-accent">ROAM</span>
+            </span>
+            <span className="text-white/25 text-[0.5rem] font-body uppercase tracking-premium leading-none mt-0.5">Premium Travel</span>
+          </div>
         </Link>
 
+        {/* Navigation Links */}
         <div
-          className={`flex items-center gap-2 ${
+          className={`flex items-center gap-1 ${
             mobileOpen
-              ? 'fixed inset-0 bg-navy/95 dark:bg-gray-900/95 backdrop-blur-xl flex-col justify-center gap-5 opacity-100 visible'
-              : 'max-lg:opacity-0 max-lg:invisible max-lg:fixed max-lg:inset-0 max-lg:bg-navy/95 max-lg:dark:bg-gray-900/95 max-lg:backdrop-blur-xl max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:gap-5'
+              ? 'fixed inset-0 bg-primary/98 dark:bg-gray-900/98 backdrop-blur-2xl flex-col justify-center gap-4 opacity-100 visible'
+              : 'max-lg:opacity-0 max-lg:invisible max-lg:fixed max-lg:inset-0 max-lg:bg-primary/98 max-lg:dark:bg-gray-900/98 max-lg:backdrop-blur-2xl max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:gap-4'
           }`}
         >
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`font-heading text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 tracking-wide ${
+              className={`font-body text-[0.8rem] font-medium px-5 py-2.5 rounded-sm transition-all duration-500 tracking-wide ${
                 location.pathname === link.path
-                  ? 'text-accent bg-accent/15'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'
-              } ${mobileOpen ? 'text-2xl max-lg:text-2xl' : ''}`}
+                  ? 'text-accent bg-accent/10'
+                  : 'text-white/60 hover:text-white hover:bg-white/[0.05]'
+              } ${mobileOpen ? 'text-xl max-lg:text-xl' : ''}`}
             >
               {link.label}
             </Link>
           ))}
           <Link
             to="/booking"
-            className="btn-primary btn-sm mt-4 max-lg:mt-6"
+            className="btn-accent btn-sm mt-6 max-lg:mt-8"
           >
             Book Now
           </Link>
         </div>
 
+        {/* Right side controls */}
         <div className="flex items-center gap-3 z-[1001]">
           <button
             onClick={toggleTheme}
-            className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white cursor-pointer transition-all duration-300 hover:bg-accent hover:text-navy hover:border-accent"
+            className="w-9 h-9 rounded-sm bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/50 cursor-pointer transition-all duration-500 hover:bg-accent/10 hover:text-accent hover:border-accent/30"
             aria-label="Toggle dark mode"
           >
-            {dark ? <FiSun className="text-lg" /> : <FiMoon className="text-lg" />}
+            {dark ? <FiSun className="text-sm" /> : <FiMoon className="text-sm" />}
           </button>
           <button
             className="lg:hidden bg-transparent border-none text-white text-2xl cursor-pointer p-1"

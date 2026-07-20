@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
@@ -10,7 +11,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({
   origin: [
     'http://localhost:3000',
@@ -20,6 +21,8 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -37,6 +40,10 @@ app.use('/api/booking', require('./routes/booking'));
 app.use('/api/reviews', require('./routes/review'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/admin', require('./routes/admin'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+});
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

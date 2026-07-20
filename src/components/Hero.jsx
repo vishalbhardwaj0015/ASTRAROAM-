@@ -8,17 +8,23 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from('.hero-badge', {
+        y: 30, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.4,
+      })
       gsap.from('.hero-title', {
-        y: 60, opacity: 0, duration: 1.2, ease: 'power3.out', delay: 0.3,
+        y: 50, opacity: 0, duration: 1.2, ease: 'power3.out', delay: 0.6,
       })
       gsap.from('.hero-subtitle', {
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.6,
+        y: 30, opacity: 0, duration: 1, ease: 'power3.out', delay: 1.0,
       })
       gsap.from('.hero-buttons', {
-        y: 30, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.9,
+        y: 20, opacity: 0, duration: 1, ease: 'power3.out', delay: 1.3,
+      })
+      gsap.from('.hero-stats', {
+        y: 20, opacity: 0, duration: 1, ease: 'power3.out', delay: 1.6,
       })
       gsap.from('.hero-scroll', {
-        opacity: 0, duration: 1, delay: 1.5,
+        opacity: 0, duration: 1, delay: 2.0,
       })
     }, heroRef)
     return () => ctx.revert()
@@ -29,63 +35,90 @@ export default function Hero() {
   }
 
   return (
-    <section ref={heroRef} className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
-      {/* Background */}
+    <section ref={heroRef} className="relative h-screen min-h-[750px] flex items-center overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1920&h=1080&fit=crop"
-          alt="Trekker exploring Himalayan mountains"
-          className="w-full h-full object-cover object-center"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop&q=80"
+          alt="Majestic Himalayan mountain range at golden hour"
+          className="w-full h-full object-cover object-center scale-105"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/60 to-primary/30" />
+        {/* Premium gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/50 to-primary/90" />
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(201,168,76,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
       </div>
 
-      {/* Mountain SVGs */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-        <svg viewBox="0 0 1440 320" className="w-full h-auto">
-          <path fill="rgba(27,94,32,0.3)" d="M0,192L48,186.7C96,181,192,171,288,176C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-        </svg>
-        <svg viewBox="0 0 1440 320" className="w-full h-auto -mt-10">
-          <path fill="rgba(11,29,42,0.5)" d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-        </svg>
-      </div>
-
-      {/* Clouds */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="absolute top-[15%] left-[-10%] w-[300px] h-[60px] bg-white/5 rounded-full blur-2xl animate-float-cloud" />
-        <div className="absolute top-[30%] right-[-5%] w-[200px] h-[40px] bg-white/5 rounded-full blur-2xl animate-float-cloud-2" />
-        <div className="absolute top-[20%] left-[40%] w-[250px] h-[50px] bg-white/5 rounded-full blur-2xl animate-float-cloud-3" />
-      </div>
+      {/* Floating accent line */}
+      <div className="absolute left-12 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-accent/30 to-transparent z-10 max-lg:hidden" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-[1280px] mx-auto px-5 pt-20 w-full">
-        <div className="inline-block font-heading text-xs font-bold tracking-[4px] uppercase text-accent mb-5 px-5 py-2 border border-accent/30 rounded-full bg-accent/[0.08]">
-          ASTRAROAM – Travel Beyond Limits
-        </div>
-        <h1 className="hero-title font-heading font-black text-white leading-[1.05] mb-6 tracking-tight" style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
-          EXPLORE<br />
-          <span className="bg-gradient-to-r from-accent to-[#c0e862] bg-clip-text text-transparent">
-            HIMACHAL PRADESH
-          </span><br />
-          & UTTARAKHAND
-        </h1>
-        <p className="hero-subtitle text-white/70 max-w-[550px] mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
-          ASTRAROAM is a modern tour & travel platform that helps you discover stunning destinations, explore curated packages, and plan unforgettable Himalayan adventures — all in one place.
-        </p>
-        <div className="hero-buttons flex gap-4 flex-wrap">
-          <Link to="/destinations" className="btn-primary">Explore Tours</Link>
-          <Link to="/booking" className="btn-outline">Book Now</Link>
+      <div className="relative z-20 max-w-[1280px] mx-auto px-8 pt-20 w-full">
+        <div className="max-w-[700px]">
+          {/* Badge */}
+          <div className="hero-badge inline-flex items-center gap-3 font-body text-[0.65rem] font-medium uppercase tracking-premium text-accent mb-8 px-5 py-2.5 border border-accent/25 rounded-sm bg-accent/[0.06] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            Premium Himalayan Experiences Since 2021
+          </div>
+
+          {/* Title */}
+          <h1 className="hero-title font-heading text-white leading-[1.05] mb-7" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}>
+            <span className="block text-white/90">Discover the</span>
+            <span className="block mt-1">
+              <span className="bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
+                Himalayas
+              </span>
+            </span>
+            <span className="block text-white/90 mt-1">Like Never Before</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="hero-subtitle text-white/55 max-w-[520px] mb-12 leading-relaxed font-light" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)' }}>
+            Curated luxury treks, bespoke itineraries, and unforgettable adventures across Himachal Pradesh & Uttarakhand — crafted for the discerning traveler.
+          </p>
+
+          {/* Buttons */}
+          <div className="hero-buttons flex gap-5 flex-wrap mb-16">
+            <Link to="/destinations" className="btn-accent">
+              Explore Destinations
+            </Link>
+            <Link to="/booking" className="btn-outline">
+              Plan Your Journey
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="hero-stats flex gap-12 flex-wrap">
+            {[
+              ['500+', 'Happy Travelers'],
+              ['50+', 'Curated Treks'],
+              ['15+', 'Destinations'],
+            ].map(([num, label]) => (
+              <div key={label}>
+                <span className="block font-heading text-2xl font-bold text-accent">{num}</span>
+                <span className="text-white/40 text-xs font-body uppercase tracking-wider">{label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div
-        className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer text-white/50 text-xs font-heading tracking-widest uppercase transition-colors hover:text-accent"
+        className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 cursor-pointer text-white/30 text-[0.6rem] font-body tracking-premium uppercase transition-colors hover:text-accent"
         onClick={scrollToContent}
       >
-        <span>Scroll Down</span>
-        <FiChevronDown className="text-2xl animate-bounce-scroll" />
+        <span>Scroll</span>
+        <div className="w-[1px] h-10 bg-gradient-to-b from-accent/50 to-transparent" />
+      </div>
+
+      {/* Right side floating element */}
+      <div className="absolute right-8 bottom-24 z-20 max-lg:hidden">
+        <div className="flex flex-col items-center gap-2 text-white/25 text-[0.55rem] font-body tracking-premium uppercase writing-mode-vertical" style={{ writingMode: 'vertical-rl' }}>
+          <div className="w-[1px] h-16 bg-gradient-to-b from-transparent to-accent/30" />
+          <span>Astraroam</span>
+        </div>
       </div>
     </section>
   )

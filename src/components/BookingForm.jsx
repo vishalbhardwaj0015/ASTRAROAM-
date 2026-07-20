@@ -56,17 +56,17 @@ export default function BookingForm() {
 
   const sendWhatsApp = (data) => {
     const msg = encodeURIComponent(
-      `🏔️ *NEW BOOKING REQUEST — ASTRAROAM*\n` +
+      `*NEW BOOKING REQUEST — ASTRAROAM*\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-      `👤 *Name:* ${data.name}\n` +
-      `📱 *Phone:* ${data.phone}\n` +
-      `📧 *Email:* ${data.email}\n\n` +
-      `🗺️ *Dream Destination:* ${data.dreamDestination}\n` +
-      `🎒 *Travel Type:* ${data.travelType}\n` +
-      `👥 *Group Size:* ${data.people} person(s)\n` +
-      `📅 *Travel Date:* ${data.date}\n` +
-      `💰 *Budget:* ${data.budget || 'Not specified'}\n\n` +
-      `💬 *Special Requirements:*\n${data.message || 'None'}\n\n` +
+      `Name: ${data.name}\n` +
+      `Phone: ${data.phone}\n` +
+      `Email: ${data.email}\n\n` +
+      `Dream Destination: ${data.dreamDestination}\n` +
+      `Travel Type: ${data.travelType}\n` +
+      `Group Size: ${data.people} person(s)\n` +
+      `Travel Date: ${data.date}\n` +
+      `Budget: ${data.budget || 'Not specified'}\n\n` +
+      `Special Requirements:\n${data.message || 'None'}\n\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━\n` +
       `Sent from ASTRAROAM Website`
     )
@@ -104,67 +104,67 @@ export default function BookingForm() {
   const today = new Date().toISOString().split('T')[0]
 
   const inputClass = (field) =>
-    `w-full px-4 py-3.5 border-2 rounded-xl font-body text-sm text-navy dark:text-gray-100 transition-all duration-300 bg-off-white dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:border-primary dark:focus:border-accent focus:bg-white dark:focus:bg-gray-700 focus:ring-4 focus:ring-primary/10 ${errors[field] ? 'border-danger' : 'border-gray-100 dark:border-gray-700'}`
+    `w-full px-5 py-4 border rounded-sm font-body text-sm text-navy dark:text-gray-100 transition-all duration-300 bg-off-white dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:border-accent dark:focus:border-accent focus:bg-white dark:focus:bg-gray-700 focus:ring-2 focus:ring-accent/10 ${errors[field] ? 'border-danger' : 'border-gray-200 dark:border-gray-700'}`
 
   return (
     <div data-aos="fade-up">
       {submitted && (
-        <div className="text-center p-10 mb-8 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-gray-800 dark:to-gray-800 border-2 border-primary/20 dark:border-primary/30 rounded-3xl animate-slide-up">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent text-white text-3xl font-bold flex items-center justify-center mx-auto mb-5 shadow-lg shadow-primary/30">
+        <div className="text-center p-12 mb-8 bg-accent/[0.04] dark:bg-gray-800 border border-accent/15 dark:border-accent/20 rounded-lg animate-slide-up">
+          <div className="w-16 h-16 rounded-sm bg-accent text-primary text-2xl font-bold flex items-center justify-center mx-auto mb-5 shadow-gold">
             <FiCheck />
           </div>
-          <h3 className="text-2xl text-primary dark:text-gray-100 font-heading font-bold mb-2">Booking Request Sent!</h3>
-          <p className="text-gray dark:text-gray-300 text-base max-w-md mx-auto">Your dream trip details have been shared with our team. We'll contact you within 2 hours to craft your perfect Himalayan experience.</p>
-          <div className="flex items-center justify-center gap-2 mt-4 text-sm text-primary font-medium">
+          <h3 className="text-2xl text-navy dark:text-gray-100 font-heading font-bold mb-2">Booking Request Sent!</h3>
+          <p className="text-gray-500 dark:text-gray-300 text-base max-w-md mx-auto font-light">Your dream trip details have been shared with our team. We'll contact you within 2 hours.</p>
+          <div className="flex items-center justify-center gap-2 mt-5 text-sm text-accent font-medium">
             <FaWhatsapp className="text-lg" /> Sent to +91 70185 99060 & +91 98055 56015
           </div>
         </div>
       )}
 
-      <div className="bg-white dark:bg-gray-800 rounded-3xl p-10 shadow-glass-lg border border-gray-50 dark:border-gray-700">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-10 shadow-premium border border-gray-100/80 dark:border-gray-700/50">
         <div className="mb-8">
           <span className="section-tag">Plan Your Trip</span>
-          <h2 className="text-[clamp(1.5rem,3vw,2rem)] mt-2 mb-2 dark:text-gray-100">Tell Us Your Dream</h2>
-          <p className="text-gray dark:text-gray-300 text-sm">Share your travel vision and we'll make it happen. All details are sent directly to our team via WhatsApp.</p>
+          <h2 className="text-[clamp(1.5rem,3vw,2rem)] mt-3 mb-2 dark:text-gray-100 font-heading">Tell Us Your Dream</h2>
+          <p className="text-gray-500 dark:text-gray-300 text-sm font-light">Share your travel vision and we'll make it happen.</p>
         </div>
 
         <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
           {/* Personal Info */}
           <div>
-            <h4 className="font-heading font-bold text-navy dark:text-gray-100 text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-primary text-white text-[10px] flex items-center justify-center">1</span>
+            <h4 className="font-body font-semibold text-navy dark:text-gray-100 text-xs mb-3 uppercase tracking-wider flex items-center gap-2">
+              <span className="w-5 h-5 rounded-sm bg-accent text-primary text-[9px] flex items-center justify-center font-bold">1</span>
               Personal Information
             </h4>
             <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Full Name *</label>
+                <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Full Name *</label>
                 <input type="text" placeholder="Your full name" value={form.name} onChange={(e) => handleChange('name', e.target.value)} className={inputClass('name')} />
                 {errors.name && <span className="text-danger text-xs font-medium">{errors.name}</span>}
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Phone Number *</label>
+                <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Phone Number *</label>
                 <input type="tel" placeholder="10-digit mobile" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} className={inputClass('phone')} />
                 {errors.phone && <span className="text-danger text-xs font-medium">{errors.phone}</span>}
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Email *</label>
+                <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Email *</label>
                 <input type="email" placeholder="your@email.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} className={inputClass('email')} />
                 {errors.email && <span className="text-danger text-xs font-medium">{errors.email}</span>}
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-100 dark:border-gray-700" />
+          <div className="border-t border-gray-100 dark:border-gray-700/50" />
 
           {/* Trip Details */}
           <div>
-            <h4 className="font-heading font-bold text-navy dark:text-gray-100 text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-primary text-white text-[10px] flex items-center justify-center">2</span>
+            <h4 className="font-body font-semibold text-navy dark:text-gray-100 text-xs mb-3 uppercase tracking-wider flex items-center gap-2">
+              <span className="w-5 h-5 rounded-sm bg-accent text-primary text-[9px] flex items-center justify-center font-bold">2</span>
               Your Dream Trip
             </h4>
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Dream Destination *</label>
+                <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Dream Destination *</label>
                 <select value={form.dreamDestination} onChange={(e) => handleChange('dreamDestination', e.target.value)} className={inputClass('dreamDestination')}>
                   <option value="">Where do you want to go?</option>
                   {allOptions.map((opt, i) => (
@@ -174,7 +174,7 @@ export default function BookingForm() {
                 {errors.dreamDestination && <span className="text-danger text-xs font-medium">{errors.dreamDestination}</span>}
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Travel Type *</label>
+                <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Travel Type *</label>
                 <select value={form.travelType} onChange={(e) => handleChange('travelType', e.target.value)} className={inputClass('travelType')}>
                   <option value="">What kind of trip?</option>
                   {travelTypes.map((t, i) => (
@@ -189,17 +189,17 @@ export default function BookingForm() {
           {/* Travel Details */}
           <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
             <div className="flex flex-col gap-1.5">
-              <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider flex items-center gap-1"><FiUsers className="text-primary" /> Group Size *</label>
+              <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider flex items-center gap-1"><FiUsers className="text-accent" /> Group Size *</label>
               <input type="number" min="1" max="50" placeholder="How many travelers?" value={form.people} onChange={(e) => handleChange('people', e.target.value)} className={inputClass('people')} />
               {errors.people && <span className="text-danger text-xs font-medium">{errors.people}</span>}
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider flex items-center gap-1"><FiCalendar className="text-primary" /> Travel Date *</label>
+              <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider flex items-center gap-1"><FiCalendar className="text-accent" /> Travel Date *</label>
               <input type="date" min={today} value={form.date} onChange={(e) => handleChange('date', e.target.value)} className={inputClass('date')} />
               {errors.date && <span className="text-danger text-xs font-medium">{errors.date}</span>}
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Budget Range</label>
+              <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Budget Range</label>
               <select value={form.budget} onChange={(e) => handleChange('budget', e.target.value)} className={inputClass('budget')}>
                 <option value="">Select budget (optional)</option>
                 {budgetRanges.map((b, i) => (
@@ -211,17 +211,17 @@ export default function BookingForm() {
 
           {/* Special Requirements */}
           <div className="flex flex-col gap-1.5">
-            <label className="font-heading font-semibold text-xs text-gray dark:text-gray-300 uppercase tracking-wider">Special Requirements / Dream Details</label>
+            <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Special Requirements / Dream Details</label>
             <textarea
               rows="4"
-              placeholder="Tell us about your dream trip — preferred activities, dietary needs, accommodation style, any special occasions, or anything else we should know..."
+              placeholder="Tell us about your dream trip — preferred activities, dietary needs, accommodation style..."
               value={form.message}
               onChange={(e) => handleChange('message', e.target.value)}
-              className="w-full px-4 py-3.5 border-2 border-gray-100 dark:border-gray-700 rounded-xl font-body text-sm text-navy dark:text-gray-100 transition-all duration-300 bg-off-white dark:bg-gray-800 focus:outline-none focus:border-primary dark:focus:border-accent focus:bg-white dark:focus:bg-gray-700 focus:ring-4 focus:ring-primary/10 resize-y min-h-[100px]"
+              className="w-full px-5 py-4 border border-gray-200 dark:border-gray-700 rounded-sm font-body text-sm text-navy dark:text-gray-100 transition-all duration-300 bg-off-white dark:bg-gray-800 focus:outline-none focus:border-accent dark:focus:border-accent focus:bg-white dark:focus:bg-gray-700 focus:ring-2 focus:ring-accent/10 resize-y min-h-[100px]"
             />
           </div>
 
-          <button type="submit" className="btn-primary self-start text-base px-10 py-4 mt-2">
+          <button type="submit" className="btn-primary self-start text-sm px-10 py-4 mt-2">
             Send Booking Request <FiSend />
           </button>
         </form>
@@ -235,13 +235,13 @@ export default function BookingForm() {
           [FaStar, 'Premium Quality', 'Handpicked experiences'],
           [FaMapMarkedAlt, 'Expert Guides', 'Certified local professionals'],
         ].map(([Icon, title, desc], i) => (
-          <div key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay={i * 80}>
-            <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-lg shrink-0">
+          <div key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-sm border border-gray-100/80 dark:border-gray-700/50" data-aos="fade-up" data-aos-delay={i * 80}>
+            <div className="w-10 h-10 rounded-sm bg-accent/[0.08] text-accent flex items-center justify-center text-base shrink-0">
               <Icon />
             </div>
             <div>
-              <h5 className="font-heading font-bold text-xs text-navy dark:text-gray-100">{title}</h5>
-              <p className="text-gray dark:text-gray-400 text-[10px]">{desc}</p>
+              <h5 className="font-body font-semibold text-xs text-navy dark:text-gray-100">{title}</h5>
+              <p className="text-gray-500 dark:text-gray-400 text-[10px] font-light">{desc}</p>
             </div>
           </div>
         ))}
