@@ -57,7 +57,7 @@ export default function Hero() {
       <div className="relative z-20 max-w-[1280px] mx-auto px-8 pt-28 lg:pt-24 w-full">
         <div className="max-w-[700px]">
           {/* Badge */}
-          <div className="hero-badge inline-flex items-center gap-3 font-body text-[0.65rem] font-medium uppercase tracking-premium text-accent mb-8 px-5 py-2.5 border border-accent/25 rounded-sm bg-accent/[0.06] backdrop-blur-sm">
+          <div className="hero-badge inline-flex items-center gap-3 font-body text-[0.65rem] font-medium uppercase tracking-premium text-accent mb-8 mt-10 px-5 py-2.5 border border-accent/25 rounded-sm bg-accent/[0.06] backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             Premium Himalayan Experiences Since 2021
           </div>

@@ -37,9 +37,8 @@ export default function Navbar() {
   return (
     <>
       {/* Top Info Bar - hides on scroll */}
-      <div className={`hidden lg:block w-full transition-all duration-500 overflow-hidden ${
-        scrolled ? 'max-h-0 opacity-0' : 'max-h-[40px] opacity-100'
-      } bg-primary-dark/80 border-b border-white/[0.04]`}>
+      <div className={`hidden lg:block w-full transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 opacity-0' : 'max-h-[40px] opacity-100'
+        } bg-primary-dark/80 border-b border-white/[0.04]`}>
         <div className="max-w-[1280px] mx-auto px-8 h-10 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href="tel:+917018599060" className="flex items-center gap-2 text-white/50 hover:text-accent transition-colors text-[0.65rem] font-body tracking-wide">
@@ -61,11 +60,10 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav
-        className={`fixed left-0 right-0 z-50 flex items-center transition-all duration-500 ${
-          scrolled
-            ? 'top-0 h-[68px] bg-primary/95 dark:bg-gray-900/95 backdrop-blur-2xl shadow-premium border-b border-white/[0.04]'
-            : 'top-0 lg:top-[40px] h-[72px] lg:h-[68px] bg-transparent'
-        }`}
+        className={`fixed left-0 right-0 z-50 flex items-center transition-all duration-500 ${scrolled
+          ? 'top-0 h-[68px] bg-primary/95 dark:bg-gray-900/95 backdrop-blur-2xl shadow-premium border-b border-white/[0.04]'
+          : 'top-0 lg:top-[40px] h-[72px] lg:h-[68px] bg-transparent'
+          }`}
       >
         <div className="w-full max-w-[1280px] mx-auto px-8 flex items-center justify-between">
           {/* Logo */}
@@ -80,17 +78,16 @@ export default function Navbar() {
               <span className="font-heading font-bold text-[1.1rem] text-white tracking-wide leading-none">
                 ASTRA<span className="text-accent">ROAM</span>
               </span>
-              <span className="text-white/30 text-[0.45rem] font-body uppercase tracking-[0.3em] leading-none mt-1">Himalayan Adventures</span>
+              <span className="text-white/30 text-[0.45rem] font-body uppercase tracking-[0.3em] leading-none mt-2  ">Himalayan Adventures</span>
             </div>
           </Link>
 
           {/* Navigation Links */}
           <div
-            className={`flex items-center gap-0.5 ${
-              mobileOpen
-                ? 'fixed inset-0 bg-primary/98 dark:bg-gray-900/98 backdrop-blur-2xl flex-col justify-center gap-2 opacity-100 visible'
-                : 'max-lg:opacity-0 max-lg:invisible max-lg:fixed max-lg:inset-0 max-lg:bg-primary/98 max-lg:dark:bg-gray-900/98 max-lg:backdrop-blur-2xl max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:gap-2'
-            }`}
+            className={`flex items-center gap-0.5 ${mobileOpen
+              ? 'fixed inset-0 bg-primary/98 dark:bg-gray-900/98 backdrop-blur-2xl flex-col justify-center gap-2 opacity-100 visible'
+              : 'max-lg:opacity-0 max-lg:invisible max-lg:fixed max-lg:inset-0 max-lg:bg-primary/98 max-lg:dark:bg-gray-900/98 max-lg:backdrop-blur-2xl max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:gap-2'
+              }`}
           >
             {mobileOpen && (
               <div className="lg:hidden mb-8 text-center">
@@ -106,11 +103,10 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative font-body text-[0.78rem] font-medium px-5 py-2.5 rounded-sm transition-all duration-300 tracking-wide ${
-                  location.pathname === link.path
-                    ? 'text-accent bg-accent/[0.08]'
-                    : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
-                } ${mobileOpen ? 'text-lg max-lg:text-lg' : ''}`}
+                className={`relative font-body text-[0.78rem] font-medium px-5 py-2.5 rounded-sm transition-all duration-300 tracking-wide ${location.pathname === link.path
+                  ? 'text-accent bg-accent/[0.08]'
+                  : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                  } ${mobileOpen ? 'text-lg max-lg:text-lg' : ''}`}
               >
                 {link.label}
                 {location.pathname === link.path && !mobileOpen && (
