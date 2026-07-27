@@ -3,9 +3,10 @@ import { FiTarget, FiHeart, FiEye } from 'react-icons/fi'
 const team = [
   { name: 'Manish Sharma', role: 'Founder & Lead Guide', avatar: 'MS' },
   { name: 'Vishal Sharma', role: 'Founder & Lead Guide', avatar: 'VS' },
-  { name: 'Neha Sharma', role: 'Operations Manager', avatar: 'NS' },
+  { name: 'Rahul Sharma', role: 'Operations Manager', avatar: 'NS' },
   { name: 'Vikram Thakur', role: 'Senior Trek Leader', avatar: 'VT' },
   { name: 'Priya Negi', role: 'Customer Relations', avatar: 'PN' },
+  { name: 'Tamanna Sharma', role: 'Team Leader', avatar: 'TS' },
 ]
 
 export default function About() {
