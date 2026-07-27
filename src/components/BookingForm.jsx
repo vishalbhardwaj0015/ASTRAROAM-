@@ -13,15 +13,6 @@ const allOptions = [
 
 const travelTypes = ['Trekking', 'Tour Package', 'Road Trip', 'Weekend Getaway', 'Honeymoon', 'Group Trip', 'Family Vacation']
 
-const budgetRanges = [
-  'Under ₹5,000',
-  '₹5,000 – ₹10,000',
-  '₹10,000 – ₹20,000',
-  '₹20,000 – ₹50,000',
-  '₹50,000+',
-  'Flexible / Discuss Later',
-]
-
 export default function BookingForm() {
   const { destination } = useParams()
 
@@ -33,7 +24,6 @@ export default function BookingForm() {
     travelType: '',
     people: '',
     date: '',
-    budget: '',
     message: '',
   })
   const [errors, setErrors] = useState({})
@@ -65,7 +55,6 @@ export default function BookingForm() {
       `Travel Type: ${data.travelType}\n` +
       `Group Size: ${data.people} person(s)\n` +
       `Travel Date: ${data.date}\n` +
-      `Budget: ${data.budget || 'Not specified'}\n\n` +
       `Special Requirements:\n${data.message || 'None'}\n\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━\n` +
       `Sent from ASTRAROAM Website`
@@ -91,7 +80,7 @@ export default function BookingForm() {
       }
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 6000)
-      setForm({ name: '', phone: '', email: '', dreamDestination: '', travelType: '', people: '', date: '', budget: '', message: '' })
+      setForm({ name: '', phone: '', email: '', dreamDestination: '', travelType: '', people: '', date: '', message: '' })
       setErrors({})
     }
   }
@@ -114,7 +103,7 @@ export default function BookingForm() {
             <FiCheck />
           </div>
           <h3 className="text-2xl text-navy dark:text-gray-100 font-heading font-bold mb-2">Booking Request Sent!</h3>
-          <p className="text-gray-500 dark:text-gray-300 text-base max-w-md mx-auto font-light">Your dream trip details have been shared with our team. We'll contact you within 2 hours.</p>
+          <p className="text-gray-500 dark:text-gray-300 text-base max-w-md mx-auto font-light">{'\u201CYour dream trip details have been shared with our team. We\u2019ll contact you within 2 hours.\u201D'}</p>
           <div className="flex items-center justify-center gap-2 mt-5 text-sm text-accent font-medium">
             <FaWhatsapp className="text-lg" /> Sent to +91 70185 99060 & +91 98055 56015
           </div>
@@ -125,7 +114,7 @@ export default function BookingForm() {
         <div className="mb-8">
           <span className="section-tag">Plan Your Trip</span>
           <h2 className="text-[clamp(1.5rem,3vw,2rem)] mt-3 mb-2 dark:text-gray-100 font-heading">Tell Us Your Dream</h2>
-          <p className="text-gray-500 dark:text-gray-300 text-sm font-light">Share your travel vision and we'll make it happen.</p>
+          <p className="text-gray-500 dark:text-gray-300 text-sm font-light">{'\u201CShare your travel vision and we\u2019ll make it happen.\u201D'}</p>
         </div>
 
         <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
@@ -187,7 +176,7 @@ export default function BookingForm() {
           </div>
 
           {/* Travel Details */}
-          <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
+          <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
             <div className="flex flex-col gap-1.5">
               <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider flex items-center gap-1"><FiUsers className="text-accent" /> Group Size *</label>
               <input type="number" min="1" max="50" placeholder="How many travelers?" value={form.people} onChange={(e) => handleChange('people', e.target.value)} className={inputClass('people')} />
@@ -197,15 +186,6 @@ export default function BookingForm() {
               <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider flex items-center gap-1"><FiCalendar className="text-accent" /> Travel Date *</label>
               <input type="date" min={today} value={form.date} onChange={(e) => handleChange('date', e.target.value)} className={inputClass('date')} />
               {errors.date && <span className="text-danger text-xs font-medium">{errors.date}</span>}
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <label className="font-body font-medium text-[0.7rem] text-gray-500 dark:text-gray-300 uppercase tracking-wider">Budget Range</label>
-              <select value={form.budget} onChange={(e) => handleChange('budget', e.target.value)} className={inputClass('budget')}>
-                <option value="">Select budget (optional)</option>
-                {budgetRanges.map((b, i) => (
-                  <option key={i} value={b}>{b}</option>
-                ))}
-              </select>
             </div>
           </div>
 

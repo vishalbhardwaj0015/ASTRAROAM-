@@ -10,7 +10,7 @@ export default function Treks() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5" data-aos="fade-up">
           <span className="section-tag">Adventures</span>
           <h1 className="text-white text-[clamp(2rem,5vw,3.5rem)] mb-3 mt-3 font-heading">Trekking Adventures</h1>
-          <p className="text-white/45 text-lg max-w-lg font-light">Challenge yourself with our curated Himalayan treks for every skill level</p>
+          <p className="text-white/45 text-lg max-w-lg font-light">{'\u201CChallenge yourself with our curated Himalayan treks for every skill level.\u201D'}</p>
         </div>
       </section>
       <section className="py-32 dark:bg-gray-900">

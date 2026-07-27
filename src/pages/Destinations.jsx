@@ -10,7 +10,7 @@ export default function Destinations() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
           <span className="section-tag">Explore</span>
           <h1 className="text-white text-[clamp(2rem,5vw,3.5rem)] mb-3 mt-3 font-heading">Our Destinations</h1>
-          <p className="text-white/45 text-lg max-w-lg font-light">Handpicked locations across the Himalayan belt for your perfect getaway</p>
+          <p className="text-white/45 text-lg max-w-lg font-light">{'\u201CHandpicked locations across the Himalayan belt for your perfect getaway.\u201D'}</p>
         </div>
       </section>
       <section className="py-32 dark:bg-gray-900">

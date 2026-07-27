@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { FiGlobe, FiUsers, FiPackage, FiHeart, FiShield, FiDollarSign, FiHeadphones, FiArrowRight, FiPhone } from 'react-icons/fi'
+import { FiGlobe, FiUsers, FiPackage, FiHeart, FiShield, FiHeadphones, FiArrowRight, FiPhone } from 'react-icons/fi'
 import { FaMountain, FaStar } from 'react-icons/fa'
 import Hero from '../components/Hero'
 import DestinationCard from '../components/DestinationCard'
@@ -13,18 +13,18 @@ import FAQ from '../components/FAQ'
 import { destinations, treks, packages } from '../data/siteData'
 
 const features = [
-  { icon: <FiGlobe />, title: 'Breathtaking Landscapes', desc: 'Snow-capped peaks, pristine lakes, ancient villages, and lush valleys across the Himalayas.' },
-  { icon: <FiUsers />, title: 'Expert Local Guides', desc: 'Certified guides who know every trail, hidden gem, and secret viewpoint in the region.' },
-  { icon: <FiPackage />, title: 'Curated Experiences', desc: 'Thoughtfully designed itineraries tailored to your preferences and travel style.' },
-  { icon: <FiHeart />, title: 'Seamless Journey', desc: 'From discovery to booking to travel — everything managed in one seamless platform.' },
+  { icon: <FiGlobe />, title: 'Breathtaking Landscapes', desc: '\u201CSnow-capped peaks, pristine lakes, ancient villages, and lush valleys across the Himalayas.\u201D' },
+  { icon: <FiUsers />, title: 'Expert Local Guides', desc: '\u201CCertified guides who know every trail, hidden gem, and secret viewpoint in the region.\u201D' },
+  { icon: <FiPackage />, title: 'Curated Experiences', desc: '\u201CThoughtfully designed itineraries tailored to your preferences and travel style.\u201D' },
+  { icon: <FiHeart />, title: 'Seamless Journey', desc: '\u201CFrom discovery to booking to travel \u2014 everything managed in one seamless platform.\u201D' },
 ]
 
 const whyChooseUs = [
-  { icon: <FaMountain />, title: 'Expert Guides', desc: 'Local experts with years of Himalayan experience' },
-  { icon: <FiShield />, title: 'Safe Travel', desc: 'First aid trained staff and strict safety protocols' },
-  { icon: <FiDollarSign />, title: 'Best Value', desc: 'Premium experiences at competitive rates' },
-  { icon: <FiPackage />, title: 'Custom Trips', desc: 'Flexible itineraries for every traveler' },
-  { icon: <FiHeadphones />, title: '24/7 Support', desc: 'Round-the-clock assistance during your trip' },
+  { icon: <FaMountain />, title: 'Expert Guides', desc: '\u201CLocal experts with years of Himalayan experience.\u201D' },
+  { icon: <FiShield />, title: 'Safe Travel', desc: '\u201CFirst aid trained staff and strict safety protocols.\u201D' },
+  { icon: <FiHeart />, title: 'Personal Touch', desc: '\u201CEvery trip crafted with care and attention to detail.\u201D' },
+  { icon: <FiPackage />, title: 'Custom Trips', desc: '\u201CFlexible itineraries for every traveler.\u201D' },
+  { icon: <FiHeadphones />, title: '24/7 Support', desc: '\u201CRound-the-clock assistance during your trip.\u201D' },
 ]
 
 const stats = [
@@ -35,11 +35,11 @@ const stats = [
 ]
 
 const generalFAQs = [
-  { q: 'How do I book a trek or package?', a: 'You can book through our website booking page, call us at +91 70185 99060 or +91 98055 56015, or email info@astraroam.com. Our team will confirm your booking within 24 hours.' },
-  { q: 'What should I pack for a trek?', a: 'Essentials include sturdy trekking shoes, warm layers, rain gear, sunscreen, water bottle, headlamp, and personal medications. A detailed packing list is shared after booking.' },
-  { q: 'Is prior trekking experience required?', a: 'Many of our treks are beginner-friendly. We clearly mention difficulty levels. Our guides ensure everyone completes the trek safely and comfortably.' },
-  { q: 'What is the cancellation policy?', a: 'Full refund if cancelled 15+ days before. 50% refund for 7-14 days. No refund within 7 days. We recommend travel insurance for unforeseen circumstances.' },
-  { q: 'Are meals included in trek packages?', a: 'Yes, all meals during the trek are included - breakfast, lunch, evening snacks, and dinner. We accommodate dietary requirements with prior notice.' },
+  { q: 'How do I book a trek or package?', a: '\u201CYou can book through our website booking page, call us at +91 70185 99060 or +91 98055 56015, or email info@astraroam.com. Our team will confirm your booking within 24 hours.\u201D' },
+  { q: 'What should I pack for a trek?', a: '\u201CEssentials include sturdy trekking shoes, warm layers, rain gear, sunscreen, water bottle, headlamp, and personal medications. A detailed packing list is shared after booking.\u201D' },
+  { q: 'Is prior trekking experience required?', a: '\u201CMany of our treks are beginner-friendly. We clearly mention difficulty levels. Our guides ensure everyone completes the trek safely and comfortably.\u201D' },
+  { q: 'What is the cancellation policy?', a: '\u201CFull refund if cancelled 15+ days before. 50% refund for 7-14 days. No refund within 7 days. We recommend travel insurance for unforeseen circumstances.\u201D' },
+  { q: 'Are meals included in trek packages?', a: '\u201CYes, all meals during the trek are included - breakfast, lunch, evening snacks, and dinner. We accommodate dietary requirements with prior notice.\u201D' },
 ]
 
 export default function Home() {
@@ -75,7 +75,7 @@ export default function Home() {
             <span className="section-tag">Why ASTRAROAM</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Your Adventure, Our Passion</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">We make stories.</p>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">{'\u201CWe make stories.\u201D'}</p>
           </div>
           <div className="features-grid-home grid grid-cols-4 gap-8 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {features.map((f, i) => (
@@ -100,7 +100,7 @@ export default function Home() {
             <span className="section-tag">Destinations</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Our Destinations</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">Discover the most stunning destinations across the Himalayan belt</p>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">{'\u201CDiscover the most stunning destinations across the Himalayan belt.\u201D'}</p>
           </div>
           <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {destinations.slice(0, 4).map((d) => (
@@ -125,7 +125,7 @@ export default function Home() {
             <span className="section-tag">Adventures</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] text-white mt-4 mb-4 font-heading">Tours & Treks</h2>
             <div className="premium-divider" />
-            <p className="text-white/40 text-lg max-w-xl mx-auto font-light mt-4">Handpicked experiences — whether you want a curated tour or a challenging trek</p>
+            <p className="text-white/40 text-lg max-w-xl mx-auto font-light mt-4">{'\u201CHandpicked experiences \u2014 whether you want a curated tour or a challenging trek.\u201D'}</p>
           </div>
 
           {/* Tab Buttons */}
@@ -204,7 +204,7 @@ export default function Home() {
             <span className="section-tag">Ready to Explore?</span>
             <h2 className="text-white text-[clamp(1.8rem,4vw,2.8rem)] mt-4 mb-5 font-heading">Your Himalayan Adventure Starts Here</h2>
             <div className="premium-divider !mb-6" />
-            <p className="text-white/50 text-lg mb-8 font-light">Talk to our travel experts and plan your perfect trip. No hidden charges, best price guaranteed.</p>
+            <p className="text-white/50 text-lg mb-8 font-light">{'\u201CTalk to our travel experts and plan your perfect trip. No hidden charges, honest guidance guaranteed.\u201D'}</p>
             <div className="flex gap-4 flex-wrap">
               <Link to="/booking" className="btn-accent">Book Now <FiArrowRight /></Link>
               <a href="tel:+917018599060" className="btn-outline flex items-center gap-2"><FiPhone /> Call Now</a>
@@ -220,7 +220,7 @@ export default function Home() {
             <span className="section-tag">The ASTRAROAM Difference</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Why Choose Us</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">We go beyond just organizing trips — we build trust</p>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">{'\u201CWe go beyond just organizing trips \u2014 we build trust.\u201D'}</p>
           </div>
           <div className="grid grid-cols-5 gap-6 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1">
             {whyChooseUs.map((item, i) => (
@@ -245,7 +245,7 @@ export default function Home() {
             <span className="section-tag">FAQ</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Frequently Asked Questions</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">Everything you need to know before your adventure</p>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">{'\u201CEverything you need to know before your adventure.\u201D'}</p>
           </div>
           <div className="max-w-[800px] mx-auto" data-aos="fade-up">
             <FAQ faqs={generalFAQs} />

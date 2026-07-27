@@ -18,7 +18,7 @@ router.post('/', [
   }
 
   try {
-    const { name, phone, email, dreamDestination, travelType, people, date, budget, message } = req.body;
+    const { name, phone, email, dreamDestination, travelType, people, date, message } = req.body;
     const booking = await Booking.create({
       name,
       phone,
@@ -27,7 +27,6 @@ router.post('/', [
       travelType,
       people: parseInt(people),
       date,
-      budget: budget || null,
       message: message || null,
     });
     res.status(201).json({ success: true, message: 'Booking request submitted successfully', data: booking });

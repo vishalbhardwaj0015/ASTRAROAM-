@@ -80,7 +80,7 @@ export default function Contact() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5" data-aos="fade-up">
           <span className="section-tag">Get in Touch</span>
           <h1 className="text-white text-[clamp(2rem,5vw,3.5rem)] mb-3 mt-3 font-heading">Contact Us</h1>
-          <p className="text-white/45 text-lg max-w-xl font-light">Have questions? We'd love to hear from you. Reach out for bookings, queries, or travel advice.</p>
+          <p className="text-white/45 text-lg max-w-xl font-light">{'\u201CHave questions? We\u2019d love to hear from you. Reach out for bookings, queries, or travel advice.\u201D'}</p>
         </div>
       </section>
 
@@ -119,7 +119,7 @@ export default function Contact() {
               <div className="mb-10">
                 <span className="section-tag">Send a Message</span>
                 <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] mt-3 mb-3 font-heading">Let's Plan Your Adventure</h2>
-                <p className="text-gray-500 text-base dark:text-gray-400 font-light">Fill out the form below and our travel experts will get back to you within 24 hours.</p>
+                <p className="text-gray-500 text-base dark:text-gray-400 font-light">{'\u201CFill out the form below and our travel experts will get back to you within 24 hours.\u201D'}</p>
               </div>
 
               {submitted && (
@@ -228,7 +228,7 @@ export default function Contact() {
               {/* Social Media */}
               <div className="premium-card p-8">
                 <h3 className="font-heading font-bold text-lg mb-2">Follow Our Adventures</h3>
-                <p className="text-gray-500 text-sm mb-6 dark:text-gray-400 font-light">Stay connected for travel tips and exclusive deals.</p>
+                <p className="text-gray-500 text-sm mb-6 dark:text-gray-400 font-light">{'\u201CStay connected for travel tips and exclusive deals.\u201D'}</p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     { icon: <FaInstagram />, label: 'Instagram', href: 'https://instagram.com/astraroam', color: 'hover:bg-pink-500' },
@@ -273,7 +273,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-navy/95" />
         <div className="relative z-10 max-w-[1280px] mx-auto px-8 text-center" data-aos="zoom-in">
           <h2 className="text-white text-[clamp(1.5rem,3vw,2.2rem)] mb-4 font-heading">Prefer to Talk Directly?</h2>
-          <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto font-light">Our travel experts are just a phone call away.</p>
+                <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto font-light">{'\u201COur travel experts are just a phone call away.\u201D'}</p>
           <div className="flex gap-5 justify-center flex-wrap">
             <a href="tel:+917018599060" className="btn-accent text-sm px-10 py-4">
               <FaPhone /> Call Now

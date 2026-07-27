@@ -10,7 +10,7 @@ export default function Booking() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5" data-aos="fade-up">
           <span className="section-tag">Book Now</span>
           <h1 className="text-white text-[clamp(2rem,5vw,3.5rem)] mb-3 mt-3 font-heading">Plan Your Dream Trip</h1>
-          <p className="text-white/45 text-lg max-w-lg font-light">Share your travel vision and our experts will craft the perfect Himalayan experience</p>
+          <p className="text-white/45 text-lg max-w-lg font-light">{'\u201CShare your travel vision and our experts will craft the perfect Himalayan experience.\u201D'}</p>
         </div>
       </section>
 
@@ -28,7 +28,7 @@ export default function Booking() {
                   </div>
                   <h3 className="font-heading font-bold text-lg">Need Help?</h3>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5 dark:text-gray-400 font-light">Talk to our travel experts directly. We're available 7 days a week.</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-5 dark:text-gray-400 font-light">{'\u201CTalk to our travel experts directly. We\u2019re available 7 days a week.\u201D'}</p>
 
                 <div className="flex flex-col gap-3">
                   <a href="tel:+917018599060" className="flex items-center gap-3 p-3.5 rounded-sm bg-off-white dark:bg-gray-700/50 hover:bg-accent/[0.04] transition-colors group">
@@ -75,9 +75,9 @@ export default function Booking() {
                 <h3 className="font-heading font-bold text-lg mb-5">How It Works</h3>
                 <div className="flex flex-col gap-5">
                   {[
-                    ['1', 'Share Your Dream', 'Tell us where you want to go, when, and with whom'],
-                    ['2', 'Get Custom Plan', 'Our experts craft a personalized itinerary for you'],
-                    ['3', 'Confirm & Go', 'Pay a small advance and start your adventure'],
+                    ['1', 'Share Your Dream', '\u201CTell us where you want to go, when, and with whom.\u201D'],
+                    ['2', 'Get Custom Plan', '\u201COur experts craft a personalized itinerary for you.\u201D'],
+                    ['3', 'Confirm & Go', '\u201CConfirm your booking and start your adventure.\u201D'],
                   ].map(([num, title, desc]) => (
                     <div key={num} className="flex gap-4 items-start">
                       <div className="w-9 h-9 rounded-sm bg-navy text-accent flex items-center justify-center text-sm font-heading font-bold shrink-0">

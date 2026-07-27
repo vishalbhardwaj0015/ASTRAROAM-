@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaMountain, FaInstagram, FaFacebookF, FaYoutube, FaPhone, FaEnvelope, FaGlobe, FaStar, FaWhatsapp } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF, FaYoutube, FaPhone, FaEnvelope, FaGlobe, FaStar, FaWhatsapp } from 'react-icons/fa'
 import { FiMapPin, FiSend } from 'react-icons/fi'
 import { testimonials } from '../data/siteData'
+import logo from '../pics/logo.jpeg'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -27,7 +28,7 @@ export default function Footer() {
         </svg>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-8">
+      <div className="max-w-[1320px] mx-auto px-6 lg:px-10">
         {/* Testimonials + Newsletter */}
         <div className="pb-12 grid grid-cols-[1fr_1fr] gap-10 items-start max-lg:grid-cols-1">
           {/* Testimonials */}
@@ -37,7 +38,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               {testimonials.slice(0, 3).map((t) => (
                 <div key={t.id} className="flex gap-4 glass-card p-5">
-                  <div className="w-10 h-10 rounded-sm bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center font-heading font-bold text-[10px] text-primary shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center font-heading font-bold text-[10px] text-primary shrink-0">
                     {t.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div className="min-w-0">
@@ -63,10 +64,10 @@ export default function Footer() {
             <h3 className="text-white text-lg mt-3 mb-6 font-heading font-bold">Join Our Newsletter</h3>
             <div className="glass-card p-6">
               <p className="text-white/40 text-sm font-light mb-5 leading-relaxed">
-                Get exclusive deals, trek updates, and travel tips delivered straight to your inbox. No spam, ever.
+                {'\u201CGet exclusive deals, trek updates, and travel tips delivered straight to your inbox. No spam, ever.\u201D'}
               </p>
               {subscribed && (
-                <div className="flex items-center gap-2 p-3 mb-4 rounded-sm bg-accent/10 border border-accent/20 animate-slide-up">
+                <div className="flex items-center gap-2 p-3 mb-4 rounded-full bg-accent/10 border border-accent/20 animate-slide-up">
                   <FaStar className="text-accent text-sm" />
                   <p className="text-accent text-xs font-medium font-body">Thanks for subscribing!</p>
                 </div>
@@ -78,9 +79,9 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-3 bg-white/[0.06] border border-white/[0.08] rounded-sm text-white text-sm font-body placeholder:text-white/25 focus:outline-none focus:border-accent/40 transition-all"
+                  className="w-full px-5 py-3.5 bg-white/[0.06] border border-white/[0.1] rounded-full text-white text-sm font-body placeholder:text-white/25 focus:outline-none focus:border-accent/40 focus:shadow-gold transition-all"
                 />
-                <button type="submit" className="inline-flex items-center gap-2 self-start px-5 py-2.5 bg-accent text-primary font-heading font-bold text-[11px] border-none rounded-sm cursor-pointer transition-all duration-500 shadow-gold uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-gold-lg">
+                <button type="submit" className="inline-flex items-center gap-2 self-start px-6 py-2.5 rounded-full font-heading font-bold text-[11px] border-none cursor-pointer transition-all duration-300 shadow-gold uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-gold-lg" style={{ background: 'linear-gradient(135deg, #c9a84c, #dbbf6a)', color: '#0f2027' }}>
                   Subscribe <FiSend />
                 </button>
               </form>
@@ -101,15 +102,18 @@ export default function Footer() {
         <div className="grid grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-12 pb-16 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-9">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-3 mb-3">
-              <div className="w-9 h-9 rounded-sm bg-accent/10 flex items-center justify-center border border-accent/20">
-                <FaMountain className="text-accent text-base" />
+            <Link to="/" className="flex items-center gap-3.5 mb-4 group">
+              <div className="relative">
+                <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-accent/30 shadow-gold transition-all duration-500 group-hover:border-accent/50 group-hover:shadow-gold-lg">
+                  <img src={logo} alt="Astraroam Logo" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-accent border-2 border-primary" />
               </div>
-              <div>
-                <span className="font-heading font-bold text-lg text-white tracking-wide block leading-none">
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-[1.15rem] text-white tracking-wide leading-none">
                   ASTRA<span className="text-accent">ROAM</span>
                 </span>
-                <span className="text-white/20 text-[0.5rem] font-body uppercase tracking-premium">Premium Travel</span>
+                <span className="text-white/40 text-[0.5rem] font-body uppercase tracking-[0.35em] leading-none mt-1.5">Himalayan Adventures</span>
               </div>
             </Link>
             <p className="text-white/45 text-sm leading-relaxed mb-6 font-light">
@@ -120,7 +124,7 @@ export default function Footer() {
                 const hrefs = ['https://instagram.com/astraroam', 'https://facebook.com/astraroam', 'https://youtube.com/@astraroam']
                 const labels = ['Instagram', 'Facebook', 'YouTube']
                 return (
-                  <a key={i} href={hrefs[i]} target="_blank" rel="noopener noreferrer" aria-label={labels[i]} className="w-[40px] h-[40px] rounded-sm bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white/40 transition-all duration-500 hover:bg-accent/15 hover:text-accent hover:border-accent/25 hover:-translate-y-0.5">
+                  <a key={i} href={hrefs[i]} target="_blank" rel="noopener noreferrer" aria-label={labels[i]} className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white/40 transition-all duration-300 hover:bg-accent/15 hover:text-accent hover:border-accent/30 hover:-translate-y-0.5 hover:shadow-gold">
                     <Icon />
                   </a>
                 )
@@ -132,7 +136,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-sm font-heading font-bold mb-6 pb-3 relative uppercase tracking-wider">
               Quick Links
-              <span className="absolute bottom-0 left-0 w-8 h-[1px] bg-accent" />
+              <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-gradient-to-r from-accent to-transparent rounded-full" />
             </h4>
             <ul className="flex flex-col gap-3">
               {[['/', 'Home'], ['/destinations', 'Destinations'], ['/treks', 'Treks'], ['/gallery', 'Gallery'], ['/about', 'About Us'], ['/contact', 'Contact']].map(([path, label]) => (
@@ -149,7 +153,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-sm font-heading font-bold mb-6 pb-3 relative uppercase tracking-wider">
               Top Destinations
-              <span className="absolute bottom-0 left-0 w-8 h-[1px] bg-accent" />
+              <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-gradient-to-r from-accent to-transparent rounded-full" />
             </h4>
             <ul className="flex flex-col gap-3">
               {[['/destination/triund', 'Triund'], ['/destination/spiti', 'Spiti Valley'], ['/destination/manali', 'Manali'], ['/destination/kasol', 'Kasol'], ['/destination/kheerganga', 'Kheerganga'], ['/destination/chitkul', 'Chitkul']].map(([path, label]) => (
@@ -166,27 +170,34 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-sm font-heading font-bold mb-6 pb-3 relative uppercase tracking-wider">
               Contact Us
-              <span className="absolute bottom-0 left-0 w-8 h-[1px] bg-accent" />
+              <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-gradient-to-r from-accent to-transparent rounded-full" />
             </h4>
             <div className="flex items-start gap-3 mb-4">
-              <FaPhone className="text-accent/60 text-sm mt-1 shrink-0" />
-              <a href="tel:+917018599060" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 70185 99060</a>
+              <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                <FaPhone className="text-accent text-[10px]" />
+              </div>
+              <div className="flex flex-col">
+                <a href="tel:+917018599060" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 70185 99060</a>
+                <a href="tel:+919805556015" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 98055 56015</a>
+              </div>
             </div>
             <div className="flex items-start gap-3 mb-4">
-              <FaPhone className="text-accent/60 text-sm mt-1 shrink-0" />
-              <a href="tel:+919805556015" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 98055 56015</a>
-            </div>
-            <div className="flex items-start gap-3 mb-4">
-              <FaEnvelope className="text-accent/60 text-sm mt-1 shrink-0" />
+              <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                <FaEnvelope className="text-accent text-[10px]" />
+              </div>
               <a href="mailto:info@astraroam.com" className="text-white/40 text-sm hover:text-accent transition-colors font-light">info@astraroam.com</a>
             </div>
             <div className="flex items-start gap-3 mb-4">
-              <FaGlobe className="text-accent/60 text-sm mt-1 shrink-0" />
+              <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                <FaGlobe className="text-accent text-[10px]" />
+              </div>
               <a href="https://www.astraroam.com" className="text-white/40 text-sm hover:text-accent transition-colors font-light">www.astraroam.com</a>
             </div>
             <div className="flex items-start gap-3">
-              <FiMapPin className="text-accent/60 text-sm mt-1 shrink-0" />
-              <span className="text-white/40 text-sm font-light">Manali, Himachal Pradesh, India</span>
+              <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                <FiMapPin className="text-accent text-[10px]" />
+              </div>
+              <span className="text-white/40 text-sm font-light">Shimla, Himachal Pradesh, India</span>
             </div>
           </div>
         </div>

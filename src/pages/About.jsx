@@ -1,7 +1,8 @@
 import { FiTarget, FiHeart, FiEye } from 'react-icons/fi'
 
 const team = [
-  { name: 'Arjun Singh', role: 'Founder & Lead Guide', avatar: 'AS' },
+  { name: 'Manish Sharma', role: 'Founder & Lead Guide', avatar: 'MS' },
+  { name: 'Vishal Sharma', role: 'Founder & Lead Guide', avatar: 'VS' },
   { name: 'Neha Sharma', role: 'Operations Manager', avatar: 'NS' },
   { name: 'Vikram Thakur', role: 'Senior Trek Leader', avatar: 'VT' },
   { name: 'Priya Negi', role: 'Customer Relations', avatar: 'PN' },
@@ -17,7 +18,7 @@ export default function About() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5" data-aos="fade-up">
           <span className="section-tag">Our Story</span>
           <h1 className="text-white text-[clamp(2rem,5vw,3.5rem)] mb-3 mt-3 font-heading">About ASTRAROAM</h1>
-          <p className="text-white/45 text-lg max-w-lg font-light">Redefining Travel Experiences Across the Himalayas</p>
+          <p className="text-white/45 text-lg max-w-lg font-light">{'\u201CRedefining Travel Experiences Across the Himalayas.\u201D'}</p>
         </div>
       </section>
 
@@ -29,10 +30,10 @@ export default function About() {
               <span className="section-tag">Our Story</span>
               <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] mt-4 mb-6 font-heading">We Turn Dreams Into Adventures</h2>
               <p className="text-gray-500 leading-relaxed mb-5 dark:text-gray-400 font-light">
-                ASTRAROAM is a premium tour & travel platform that helps travelers discover breathtaking destinations, explore curated travel packages, and plan memorable Himalayan adventures with ease. What began as a passion for the mountains has evolved into a trusted travel platform serving hundreds of happy explorers every year.
+                {'\u201CASTRAROAM is a premium tour & travel platform that helps travelers discover breathtaking destinations, explore curated travel packages, and plan memorable Himalayan adventures with ease. What began as a passion for the mountains has evolved into a trusted travel platform serving hundreds of happy explorers every year.\u201D'}
               </p>
               <p className="text-gray-500 leading-relaxed mb-10 dark:text-gray-400 font-light">
-                Based in Himachal Pradesh, our team of experienced mountaineers, certified local guides, and travel technology experts brings everything you need for travel planning into one seamless platform.
+                {'\u201CBased in Himachal Pradesh, our team of experienced mountaineers, certified local guides, and travel technology experts brings everything you need for travel planning into one seamless platform.\u201D'}
               </p>
               <div className="grid grid-cols-4 gap-6 pt-10 border-t border-gray-100 dark:border-gray-700/50 max-sm:grid-cols-2">
                 {[['500+', 'Happy Travelers'], ['50+', 'Treks Completed'], ['15+', 'Destinations'], ['3+', 'Years Experience']].map(([num, label]) => (
@@ -61,9 +62,9 @@ export default function About() {
         <div className="relative max-w-[1280px] mx-auto px-8">
           <div className="grid grid-cols-3 gap-6 max-md:grid-cols-1">
             {[
-              { icon: <FiTarget />, title: 'Our Mission', desc: "To make the Himalayas accessible to every adventure seeker while maintaining the highest standards of safety, sustainability, and customer satisfaction." },
-              { icon: <FiEye />, title: 'Our Vision', desc: "To become India's most trusted adventure travel brand, known for creating transformative experiences that connect people with nature's greatest wonders." },
-              { icon: <FiHeart />, title: 'Our Values', desc: 'Safety first, sustainable practices, genuine hospitality, and an unwavering commitment to exceeding expectations on every single trip.' },
+              { icon: <FiTarget />, title: 'Our Mission', desc: '\u201CTo make the Himalayas accessible to every adventure seeker while maintaining the highest standards of safety, sustainability, and customer satisfaction.\u201D' },
+              { icon: <FiEye />, title: 'Our Vision', desc: '\u201CTo become India\u2019s most trusted adventure travel brand, known for creating transformative experiences that connect people with nature\u2019s greatest wonders.\u201D' },
+              { icon: <FiHeart />, title: 'Our Values', desc: '\u201CSafety first, sustainable practices, genuine hospitality, and an unwavering commitment to exceeding expectations on every single trip.\u201D' },
             ].map((item, i) => (
               <div key={i} className="glass-card text-center" data-aos="fade-up" data-aos-delay={i * 100}>
                 <div className="w-16 h-16 rounded-sm bg-accent/10 flex items-center justify-center text-accent text-2xl mx-auto mb-5">
@@ -84,9 +85,9 @@ export default function About() {
             <span className="section-tag">Our Team</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Meet the Explorers</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">The passionate people behind your Himalayan adventures</p>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">{'\u201CThe passionate people behind your Himalayan adventures.\u201D'}</p>
           </div>
-          <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
+          <div className="grid grid-cols-3 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {team.map((member, i) => (
               <div key={i} className="text-center p-10 premium-card" data-aos="fade-up" data-aos-delay={i * 100}>
                 <div className="w-20 h-20 rounded-sm bg-navy text-accent flex items-center justify-center font-heading font-bold text-xl mx-auto mb-5">

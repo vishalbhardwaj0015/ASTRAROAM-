@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="absolute left-12 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-accent/30 to-transparent z-10 max-lg:hidden" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-[1280px] mx-auto px-8 pt-45 lg:pt-24 w-full ">
+      <div className="relative z-20 max-w-[1280px] mx-auto px-8 pt-28 lg:pt-28 w-full  ">
         <div className="max-w-[700px]">
           {/* Title */}
           <h1 className="hero-title font-heading text-white leading-[1.05] mb-7" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}>
@@ -69,7 +69,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="hero-subtitle text-white/55 max-w-[520px] mb-12 leading-relaxed font-light" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)' }}>
-            Curated luxury treks, bespoke itineraries, and unforgettable adventures across Himachal Pradesh & Uttarakhand — crafted for the discerning traveler.
+            {'\u201CCurated luxury treks, bespoke itineraries, and unforgettable adventures across Himachal Pradesh & Uttarakhand \u2014 crafted for the discerning traveler.\u201D'}
           </p>
 
           {/* Buttons */}

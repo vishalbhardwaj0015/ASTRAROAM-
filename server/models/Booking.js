@@ -35,10 +35,6 @@ const Booking = sequelize.define('Booking', {
     type: DataTypes.DATEONLY,
     allowNull: false,
   },
-  budget: {
-    type: DataTypes.STRING(100),
-    allowNull: true,
-  },
   message: {
     type: DataTypes.TEXT,
     allowNull: true,

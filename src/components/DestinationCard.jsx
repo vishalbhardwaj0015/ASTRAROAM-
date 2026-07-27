@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { FiMapPin, FiClock, FiBarChart2, FiArrowRight, FiStar } from 'react-icons/fi'
 
 export default function DestinationCard({ destination }) {
-  const { slug, name, location, shortDescription, duration, difficulty, image, price, originalPrice, rating, reviewCount } = destination
+  const { slug, name, location, shortDescription, duration, difficulty, image, rating, reviewCount } = destination
 
   return (
     <div className="group premium-card" data-aos="fade-up">
@@ -20,18 +20,6 @@ export default function DestinationCard({ destination }) {
             {difficulty}
           </span>
         </div>
-        {/* Price badge */}
-        {price && (
-          <div className="absolute top-5 right-5">
-            <div className="bg-accent text-primary px-3 py-1.5 rounded-sm font-body">
-              <span className="text-[0.65rem] font-bold">₹{price.toLocaleString('en-IN')}</span>
-              {originalPrice && (
-                <span className="text-[0.55rem] line-through opacity-60 ml-1.5">₹{originalPrice.toLocaleString('en-IN')}</span>
-              )}
-              <span className="text-[0.5rem] block opacity-70 -mt-0.5">/person</span>
-            </div>
-          </div>
-        )}
         {/* Location at bottom */}
         <div className="absolute bottom-5 left-5 right-5">
           <h3 className="text-white font-heading text-xl font-bold mb-1">{name}</h3>
