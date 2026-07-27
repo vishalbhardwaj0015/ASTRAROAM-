@@ -1,6 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { FiGlobe, FiUsers, FiPackage, FiHeart, FiShield, FiDollarSign, FiHeadphones, FiArrowRight, FiPhone } from 'react-icons/fi'
 import { FaMountain, FaStar } from 'react-icons/fa'
 import Hero from '../components/Hero'
@@ -42,15 +43,8 @@ const generalFAQs = [
 ]
 
 export default function Home() {
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.feature-card-home', {
-        y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
-        scrollTrigger: { trigger: '.features-grid-home', start: 'top 80%' },
-      })
-    })
-    return () => ctx.revert()
-  }, [])
+  const [activeTab, setActiveTab] = useState('tours')
+  useEffect(() => {}, [])
 
   return (
     <div className="home-page">
@@ -81,7 +75,7 @@ export default function Home() {
             <span className="section-tag">Why ASTRAROAM</span>
             <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Your Adventure, Our Passion</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">We don't just plan trips. We craft life-changing Himalayan experiences.</p>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">We make stories.</p>
           </div>
           <div className="features-grid-home grid grid-cols-4 gap-8 max-xl:grid-cols-2 max-sm:grid-cols-1">
             {features.map((f, i) => (
@@ -121,42 +115,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Treks Section */}
+      {/* Adventures Tabbed Section */}
       <section className="py-32 bg-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(201,168,76,0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         <div className="relative max-w-[1280px] mx-auto px-8">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <span className="section-tag">Popular Treks</span>
-            <h2 className="text-[clamp(2rem,4vw,3.2rem)] text-white mt-4 mb-4 font-heading">Trek the Himalayas</h2>
-            <div className="premium-divider" />
-            <p className="text-white/40 text-lg max-w-xl mx-auto font-light mt-4">Handpicked trekking experiences for every level of adventure</p>
-          </div>
-          <div className="grid grid-cols-3 gap-6 max-xl:grid-cols-2 max-md:grid-cols-1">
-            {treks.slice(0, 3).map((t) => (
-              <TrekCard key={t.id} trek={t} />
-            ))}
-          </div>
-          <div className="text-center mt-16" data-aos="fade-up">
-            <Link to="/treks" className="btn-accent">
-              Explore All Treks <FiArrowRight />
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Packages Section */}
-      <section className="py-32 bg-off-white dark:bg-gray-950">
-        <div className="max-w-[1280px] mx-auto px-8">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <span className="section-tag">Packages</span>
-            <h2 className="text-[clamp(2rem,4vw,3.2rem)] mt-4 mb-4 font-heading">Curated Travel Packages</h2>
+          {/* Section Header */}
+          <div className="text-center mb-10" data-aos="fade-up">
+            <span className="section-tag">Adventures</span>
+            <h2 className="text-[clamp(2rem,4vw,3.2rem)] text-white mt-4 mb-4 font-heading">Tours & Treks</h2>
             <div className="premium-divider" />
-            <p className="text-gray-500 text-lg max-w-xl mx-auto dark:text-gray-400 font-light mt-4">All-inclusive packages designed for the perfect Himalayan getaway</p>
+            <p className="text-white/40 text-lg max-w-xl mx-auto font-light mt-4">Handpicked experiences — whether you want a curated tour or a challenging trek</p>
           </div>
-          <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
-            {packages.map((p) => (
-              <PackageCard key={p.id} pkg={p} />
-            ))}
+
+          {/* Tab Buttons */}
+          <div className="flex justify-center mb-12" data-aos="fade-up">
+            <div className="inline-flex bg-white/[0.06] border border-white/10 rounded-sm p-1 gap-1">
+              <button
+                onClick={() => setActiveTab('tours')}
+                className={`px-8 py-3 text-sm font-heading font-semibold tracking-wider uppercase transition-all duration-300 rounded-sm ${
+                  activeTab === 'tours'
+                    ? 'bg-accent text-navy shadow-lg'
+                    : 'text-white/60 hover:text-white hover:bg-white/[0.08]'
+                }`}
+              >
+                <FiPackage className="inline mr-2 text-base" />
+                Tours
+              </button>
+              <button
+                onClick={() => setActiveTab('treks')}
+                className={`px-8 py-3 text-sm font-heading font-semibold tracking-wider uppercase transition-all duration-300 rounded-sm ${
+                  activeTab === 'treks'
+                    ? 'bg-accent text-navy shadow-lg'
+                    : 'text-white/60 hover:text-white hover:bg-white/[0.08]'
+                }`}
+              >
+                <FaMountain className="inline mr-2 text-base" />
+                Treks
+              </button>
+            </div>
+          </div>
+
+          {/* Tours Content */}
+          {activeTab === 'tours' && (
+            <div key="tours" className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-sm:grid-cols-1">
+              {packages.map((p) => (
+                <PackageCard key={p.id} pkg={p} />
+              ))}
+            </div>
+          )}
+
+          {/* Treks Content */}
+          {activeTab === 'treks' && (
+            <div key="treks" className="grid grid-cols-3 gap-6 max-xl:grid-cols-2 max-md:grid-cols-1">
+              {treks.slice(0, 3).map((t) => (
+                <TrekCard key={t.id} trek={t} />
+              ))}
+            </div>
+          )}
+
+          {/* Dynamic CTA */}
+          <div className="text-center mt-16" data-aos="fade-up">
+            {activeTab === 'tours' ? (
+              <Link to="/destinations" className="btn-accent">
+                View All Tours <FiArrowRight />
+              </Link>
+            ) : (
+              <Link to="/treks" className="btn-accent">
+                Explore All Treks <FiArrowRight />
+              </Link>
+            )}
           </div>
         </div>
       </section>

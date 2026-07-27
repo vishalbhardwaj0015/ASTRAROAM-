@@ -7,10 +7,10 @@ import { useTheme } from '../context/ThemeContext'
 const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/destinations', label: 'Destinations' },
-  { path: '/treks', label: 'Treks' },
+  { path: '/treks', label: 'Tours & Treks' },
   { path: '/gallery', label: 'Gallery' },
   { path: '/about', label: 'About' },
-  { path: '/contact', label: 'Contact' },
+
 ]
 
 export default function Navbar() {
@@ -126,13 +126,13 @@ export default function Navbar() {
 
           {/* Right side controls */}
           <div className="flex items-center gap-2.5 z-[1001]">
-            <a
+            {/* <a
               href="tel:+917018599060"
               className="hidden xl:flex items-center gap-2 px-4 py-2 rounded-sm bg-accent/10 border border-accent/20 text-accent text-[0.7rem] font-body font-semibold tracking-wide transition-all duration-300 hover:bg-accent hover:text-primary hover:border-accent hover:shadow-gold"
             >
               <FaPhoneAlt className="text-[0.6rem]" />
               Call Now
-            </a>
+            </a> */}
             <Link
               to="/booking"
               className="hidden lg:flex px-4 py-2 rounded-sm bg-accent text-primary text-[0.7rem] font-heading font-bold tracking-wide transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5 uppercase"
