@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Info Bar - hides on scroll */}
-      <div className={`hidden lg:block w-full transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 opacity-0' : 'max-h-[40px] opacity-100'
+      {/* <div className={`hidden lg:block w-full transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 opacity-0' : 'max-h-[40px] opacity-100'
         } bg-primary-dark/80 border-b border-white/[0.04]`}>
         <div className="max-w-[1280px] mx-auto px-8 h-10 flex items-center justify-between">
           <div className="flex items-center gap-6">
@@ -56,7 +56,7 @@ export default function Navbar() {
             <span className="text-white/30 text-[0.6rem] font-body uppercase tracking-wider">Mon - Sat: 9AM - 7PM</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navbar */}
       <nav
