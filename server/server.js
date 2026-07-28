@@ -2,12 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
+
+dotenv.config();
+
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const sequelize = require('./config/db');
 const Admin = require('./models/Admin');
-
-dotenv.config();
 
 const app = express();
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -93,7 +94,7 @@ const start = async () => {
     await sequelize.authenticate();
     console.log('Database connected');
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
     console.log('Tables synced');
 
     const adminExists = await Admin.findOne({ where: { email: 'admin@astraroam.com' } });

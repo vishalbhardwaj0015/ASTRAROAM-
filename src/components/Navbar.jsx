@@ -46,9 +46,9 @@ export default function Navbar() {
               <FiPhone className="text-[0.6rem]" />
               <span>+91 70185 99060</span>
             </a>
-            <a href="tel:+919805556015" className="flex items-center gap-2 text-white/50 hover:text-accent transition-colors text-[0.65rem] font-body tracking-wide">
+            <a href="tel:+918628988288" className="flex items-center gap-2 text-white/50 hover:text-accent transition-colors text-[0.65rem] font-body tracking-wide">
               <FiPhone className="text-[0.6rem]" />
-              <span>+91 98055 56015</span>
+              <span>+91 86289 88288</span>
             </a>
           </div>
           <div className="flex items-center gap-5">

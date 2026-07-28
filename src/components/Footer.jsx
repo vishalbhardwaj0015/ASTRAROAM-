@@ -121,7 +121,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[FaInstagram, FaFacebookF, FaYoutube].map((Icon, i) => {
-                const hrefs = ['https://instagram.com/astraroam', 'https://facebook.com/astraroam', 'https://youtube.com/@astraroam']
+                const hrefs = ['https://www.instagram.com/astraroam?utm_source=qr&igsh=MWxrb3Z6Mzdxb3hkZQ==', 'https://www.facebook.com/share/19FR6DB7pp/', 'https://youtube.com/@astraroam-m3d?si=GQWicz3s4bhpVaMg']
                 const labels = ['Instagram', 'Facebook', 'YouTube']
                 return (
                   <a key={i} href={hrefs[i]} target="_blank" rel="noopener noreferrer" aria-label={labels[i]} className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white/40 transition-all duration-300 hover:bg-accent/15 hover:text-accent hover:border-accent/30 hover:-translate-y-0.5 hover:shadow-gold">
@@ -178,7 +178,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <a href="tel:+917018599060" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 70185 99060</a>
-                <a href="tel:+919805556015" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 98055 56015</a>
+                <a href="tel:+918628988288" className="text-white/40 text-sm hover:text-accent transition-colors font-light">+91 86289 88288</a>
               </div>
             </div>
             <div className="flex items-start gap-3 mb-4">

@@ -61,7 +61,7 @@ export default function BookingForm() {
     )
     window.open(`https://wa.me/917018599060?text=${msg}`, '_blank')
     setTimeout(() => {
-      window.open(`https://wa.me/919805556015?text=${msg}`, '_blank')
+      window.open(`https://wa.me/918628988288?text=${msg}`, '_blank')
     }, 2000)
   }
 

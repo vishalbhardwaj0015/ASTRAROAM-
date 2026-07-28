@@ -39,7 +39,7 @@ export default function Contact() {
     )
     window.open(`https://wa.me/917018599060?text=${msg}`, '_blank')
     setTimeout(() => {
-      window.open(`https://wa.me/919805556015?text=${msg}`, '_blank')
+      window.open(`https://wa.me/918628988288?text=${msg}`, '_blank')
     }, 1500)
   }
 
@@ -231,9 +231,9 @@ export default function Contact() {
                 <p className="text-gray-500 text-sm mb-6 dark:text-gray-400 font-light">{'\u201CStay connected for travel tips and exclusive deals.\u201D'}</p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { icon: <FaInstagram />, label: 'Instagram', href: 'https://instagram.com/astraroam', color: 'hover:bg-pink-500' },
-                    { icon: <FaFacebookF />, label: 'Facebook', href: 'https://facebook.com/astraroam', color: 'hover:bg-blue-600' },
-                    { icon: <FaYoutube />, label: 'YouTube', href: 'https://youtube.com/@astraroam', color: 'hover:bg-red-600' },
+                    { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/astraroam?utm_source=qr&igsh=MWxrb3Z6Mzdxb3hkZQ==', color: 'hover:bg-pink-500' },
+                    { icon: <FaFacebookF />, label: 'Facebook', href: 'https://www.facebook.com/share/19FR6DB7pp/', color: 'hover:bg-blue-600' },
+                    { icon: <FaYoutube />, label: 'YouTube', href: 'https://youtube.com/@astraroam-m3d?si=GQWicz3s4bhpVaMg', color: 'hover:bg-red-600' },
                     { icon: <FaWhatsapp />, label: 'WhatsApp', href: 'https://wa.me/917018599060', color: 'hover:bg-[#25D366]' },
                   ].map((s, i) => (
                     <a
@@ -273,7 +273,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-navy/95" />
         <div className="relative z-10 max-w-[1280px] mx-auto px-8 text-center" data-aos="zoom-in">
           <h2 className="text-white text-[clamp(1.5rem,3vw,2.2rem)] mb-4 font-heading">Prefer to Talk Directly?</h2>
-                <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto font-light">{'\u201COur travel experts are just a phone call away.\u201D'}</p>
+          <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto font-light">{'\u201COur travel experts are just a phone call away.\u201D'}</p>
           <div className="flex gap-5 justify-center flex-wrap">
             <a href="tel:+917018599060" className="btn-accent text-sm px-10 py-4">
               <FaPhone /> Call Now

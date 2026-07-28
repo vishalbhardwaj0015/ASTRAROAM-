@@ -40,13 +40,13 @@ export default function Booking() {
                       <span className="block font-body font-semibold text-sm text-navy dark:text-gray-100">+91 70185 99060</span>
                     </div>
                   </a>
-                  <a href="tel:+919805556015" className="flex items-center gap-3 p-3.5 rounded-sm bg-off-white dark:bg-gray-700/50 hover:bg-accent/[0.04] transition-colors group">
+                  <a href="tel:+918628988288" className="flex items-center gap-3 p-3.5 rounded-sm bg-off-white dark:bg-gray-700/50 hover:bg-accent/[0.04] transition-colors group">
                     <div className="w-10 h-10 rounded-sm bg-accent/[0.08] text-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-primary transition-colors">
                       <FaPhone />
                     </div>
                     <div>
                       <span className="block text-[10px] text-gray-400 dark:text-gray-500 uppercase tracking-wider font-body">Call Now</span>
-                      <span className="block font-body font-semibold text-sm text-navy dark:text-gray-100">+91 98055 56015</span>
+                      <span className="block font-body font-semibold text-sm text-navy dark:text-gray-100">+91 8628988288</span>
                     </div>
                   </a>
                   <a href="https://wa.me/917018599060" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3.5 rounded-sm bg-off-white dark:bg-gray-700/50 hover:bg-[#25D366]/[0.04] transition-colors group">
